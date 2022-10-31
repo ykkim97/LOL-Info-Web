@@ -17,6 +17,10 @@
     text-align: center;
 }
 
+.gameData-champion {
+    padding: 10px;
+}
+
 .gameData-kda {
     width: 20%;
     padding: 10px;

@@ -11,18 +11,41 @@ const Match = ({gameList}) => {
                     <h3 className={styles["gameData-title"]}>매치 검색결과</h3>
                     {
                         gameList.map((gameData, index) => (
-                            
+
                             <div key={index} className={styles['gameData-container']}>
                                 <h4 className={styles['gameData-gamemode']}>{gameData.info.gameMode}</h4>
-                                <div className={styles['gameData-kda']}>
-                                    <h3>
-                                        <p>{gameData.info.participants[0].kills}/{gameData.info.participants[0].deaths}/{gameData.info.participants[0].assists}</p>
-                                    </h3>
-                                    <h4>평점</h4>
+
+                                <div className={styles['gameData-champion']}>
+                                    {gameData.info.participants.map(participant => {
+                                        if (participant.summonerName === '두되지') {
+                                            return (
+                                                <div key={index}>
+                                                    <h3>{participant.championName}</h3>
+                                                </div>
+                                            )
+                                        }
+                                    })}
                                 </div>
+
+                                <div className={styles['gameData-kda']}>
+                                    {gameData.info.participants.map(participant => {
+                                        if (participant.summonerName === '두되지') {
+                                            return (
+                                                <div key={index}>
+                                                    {/* KDA */}
+                                                    <h3>{participant.kills}/{participant.deaths}/{participant.assists}</h3>
+                                                    {/* 평점 */}
+                                                    <p>{((participant.kills + participant.assists)/participant.deaths).toFixed(2)} 평점</p>
+                                                </div>
+                                            )
+                                        }
+                                    })}
+                                </div>
+
                                 <div className={styles['gameData-individual']}>
                                     <p>킬관여</p>
                                 </div>
+
                                 <div className={styles['gameData-team']}>
                                     <div className={styles['gameData-team1']}>
                                         <p>Team 1</p>
@@ -45,6 +68,7 @@ const Match = ({gameList}) => {
                                         </ul>
                                     </div>
                                 </div>
+
                             </div>
                         ))
                     }
