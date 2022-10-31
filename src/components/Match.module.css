@@ -1,0 +1,42 @@
+.gameData-title {
+    text-align: center;
+}
+
+.gameData-container {
+    margin: auto;
+    width: 80%;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+}
+
+.gameData-gamemode {
+    padding: 10px;
+    width: 5%;
+    text-align: center;
+}
+
+.gameData-kda {
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+}
+
+.gameData-individual {
+    padding: 10px;
+    width: 5%;
+}
+
+.gameData-team {
+    display: flex;
+}
+
+.gameData-team1 {
+    padding: 10px;
+    width: 300px;
+}
+
+.gameData-team2 {
+    padding: 10px;
+}
