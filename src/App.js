@@ -8,7 +8,7 @@ function App() {
   const [gameList, setGameList] = useState([]); // 매치정보가 들어갈 Array
 
   const getPlayerGames = (e) => {
-    axios.get('http://localhost:4000/past5Games')
+    axios.get('http://localhost:4000/past5Games', {params : {searchText : searchText}}) // params 추가(검색기능)
       .then((response) => {
         setGameList(response.data);
       })

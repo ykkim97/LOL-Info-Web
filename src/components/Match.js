@@ -16,7 +16,7 @@ const Match = ({gameList, searchText}) => {
 
                                 <div className={styles['gameData-champion']}>
                                     {gameData.info.participants.map(participant => {
-                                        if (participant.summonerName === '두되지') {
+                                        if (participant.summonerName === searchText) {
                                             return (
                                                 <div key={index}>
                                                     <h3>{participant.championName}</h3>
@@ -28,7 +28,7 @@ const Match = ({gameList, searchText}) => {
 
                                 <div className={styles['gameData-kda']}>
                                     {gameData.info.participants.map(participant => {
-                                        if (participant.summonerName === '두되지') {
+                                        if (participant.summonerName === searchText) {
                                             return (
                                                 <div key={index}>
                                                     {/* KDA */}
