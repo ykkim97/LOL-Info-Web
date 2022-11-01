@@ -22,7 +22,7 @@ const getPlayerPUUID = (playerName) => {
 // GET past5Games (과거 5게임 가져오기)
 // localhost:4000/past5Games
 app.get('/past5Games', async (req, res) => {
-    const playerName = '두되지';
+    const playerName = req.query.searchText; // params를 query로 받아옴(검색기능)
     // PUUID (puuid 값 얻어오기)
     const PUUID = await getPlayerPUUID(playerName);
     const API_CALL = `https://asia.api.riotgames.com/lol/match/v5/matches/by-puuid/${PUUID}/ids?start=0&count=20&api_key=${API_KEY}`
