@@ -24,7 +24,7 @@ function App() {
         <input type="text" onChange={(e) => setSearchText(e.target.value)} />
         <button onClick={getPlayerGames}>최근 5게임의 정보 검색</button>
       </div>
-      <Match gameList={gameList}/>
+      <Match gameList={gameList} searchText={searchText}/>
     </div>
   );
 }
