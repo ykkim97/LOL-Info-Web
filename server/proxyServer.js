@@ -7,7 +7,7 @@ const app = express();
 
 app.use(cors());
 
-const API_KEY = "RGAPI-b6e3b940-7052-4132-8230-bef4762fa91f";
+const API_KEY = "RGAPI-c2999055-d948-4fdc-a229-a021d0638611";
 
 // 소환사의 puuid값을 가져오는 함수
 const getPlayerPUUID = (playerName) => {
