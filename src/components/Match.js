@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Match.module.css";
 
-const Match = ({gameList, searchText}) => {
+const Match = ({gameLis}) => {
     return (
         <>
             {

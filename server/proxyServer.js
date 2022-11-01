@@ -22,7 +22,8 @@ const getPlayerPUUID = (playerName) => {
 // GET past5Games (과거 5게임 가져오기)
 // localhost:4000/past5Games
 app.get('/past5Games', async (req, res) => {
-    const playerName = req.query.searchText; // params를 query로 받아옴(검색기능);
+    const playerName = req.query.searchText; // params를 query로 받아옴(검색기능)
+
     // PUUID (puuid 값 얻어오기)
     const PUUID = await getPlayerPUUID(playerName);
     console.log(playerName)
