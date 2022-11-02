@@ -26,7 +26,9 @@ function App() {
         <input 
           type="text" 
           className={styles['app-searchBox']}
-          onChange={(e) => setSearchText(e.target.value)} 
+          onChange={(e) => {
+            setSearchText(encodeURIComponent(e.target.value));
+          }} 
         />
         <button onClick={getPlayerGames} className={styles['app-searchButton']} >
           <FcSearch className={styles['app-searchButton-icons']}/>

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Match.module.css";
+import SummonerProfile from "./SummonerProfile";
 
 const Match = ({gameList, searchText}) => {
     return (
@@ -10,6 +11,7 @@ const Match = ({gameList, searchText}) => {
                     gameList.length !== 0 ? 
                     <>
                         <h3 className={styles["gameData-title"]}>매치 검색결과</h3>
+                        <SummonerProfile />
                         {
                             gameList.map((gameData, index) => (
     
@@ -18,7 +20,8 @@ const Match = ({gameList, searchText}) => {
     
                                     <div className={styles['gameData-champion']}>
                                         {gameData.info.participants.map(participant => {
-                                            if (participant.summonerName === searchText) {
+                                            // gameData안의 각 participant의 summonrName과 디코딩된 searchText값이 대소문자구분없이 같을 경우 
+                                            if (participant.summonerName.toUpperCase() === (decodeURIComponent(searchText)).toUpperCase()) {
                                                 return (
                                                     <div key={index}>
                                                         <h3>{participant.championName}</h3>
@@ -30,7 +33,8 @@ const Match = ({gameList, searchText}) => {
     
                                     <div className={styles['gameData-kda']}>
                                         {gameData.info.participants.map(participant => {
-                                            if (participant.summonerName === searchText) {
+                                            // gameData안의 각 participant의 summonrName과 디코딩된 searchText값이 대소문자구분없이 같을 경우
+                                            if (participant.summonerName.toUpperCase() === (decodeURIComponent(searchText)).toUpperCase()) {
                                                 return (
                                                     <div key={index}>
                                                         {/* KDA */}
@@ -75,7 +79,7 @@ const Match = ({gameList, searchText}) => {
                         }
                     </> :
                     <>
-                        <h3 className={styles["gameData-title"]}>검색결과없음</h3>
+                        <h3 className={styles["gameData-title"]}>검색결과없음{(searchText)}</h3>
                     </>
                 )
             }
