@@ -1,7 +1,10 @@
-.search-container {
+.App {
     margin: auto;
+    width: 70%;
+}
+
+.search-container {
     text-align: center;
-    width: 60%;
     background: linear-gradient(to right, #72ece2, #2ac4d8);
     height: 150px;
 }

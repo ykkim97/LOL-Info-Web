@@ -19,7 +19,7 @@ function App() {
   console.log(gameList);
 
   return (
-    <div className="App">
+    <div className={styles["App"]}>
       <div className={styles['search-container']}>
         <h1>LOLY.GG</h1>
 
