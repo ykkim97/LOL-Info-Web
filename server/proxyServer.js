@@ -7,6 +7,7 @@ const app = express();
 
 app.use(cors());
 
+// API key
 const API_KEY = "RGAPI-31d4d76d-d4dd-4ae6-a8d6-089d68a618e0";
 
 // 소환사의 puuid값을 가져오는 함수
@@ -20,7 +21,7 @@ const getPlayerPUUID = (playerName) => {
         .catch((error) => console.log(error));
 }
 
-// 소환사의 id값을 가져오는 함수
+// 소환사의 id값을 가져오는 함수 (id는 encryptedSummonerId값)
 const getPlayerID = (playerName) => {
     return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}?api_key=${API_KEY}`)
     .then(response => {
@@ -60,8 +61,10 @@ app.get('/past5Games', async (req, res) => {
     res.json(matchDataArray); 
 })
 
+// GET tier (티어정보 가져오기)
+// localhost:4000/tier
 app.get('/tier', async (req, res) => {
-    const playerName = '두되지';
+    const playerName = req.query.searchText;
     const ID = await getPlayerID(playerName);
     const API_CALL = `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${ID}?api_key=${API_KEY}`;
 
@@ -70,12 +73,12 @@ app.get('/tier', async (req, res) => {
     const leagueData = await axios.get(API_CALL)
         .then(response => response.data)
         .catch(error => console.log(error))
-    
+    leagueDataArray.push(leagueData);
 
-
+    res.json(leagueDataArray)
 })
 
-
+// port 4000
 app.listen(4000, () => {
     console.log("Server started on port 4000 - 4000포트에서 서버 구동중");
 });

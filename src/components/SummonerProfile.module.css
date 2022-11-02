@@ -14,6 +14,15 @@
     border: 1px solid black;
     padding: 10px;
     float: left;
+    text-align: right;
+}
+
+#summonerName {
+    font-size: 30px;
+}
+
+#summonerLevel {
+    font-size: 20px;
 }
 
 .summonerProfile-lankInfo {
@@ -27,14 +36,19 @@
     padding: 2px;
     font-size: 10px;
     justify-content: center;
+    
 }
 
 .summonerProfile-soloLank {
     border: 1px solid black;
     width: 40%;
+    font-size: 15px;
+    list-style: none;
 }
 
 .summonerProfile-freeLank {
     border: 1px solid black;
     width: 40%;
+    font-size: 15px;
+    list-style: none;
 }
