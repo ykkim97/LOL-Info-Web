@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import './App.css';
+import styles from "./App.module.css";
 import Match from './components/Match';
+import { FcSearch } from "react-icons/fc";
 
 function App() {
   const [searchText, setSearchText] = useState(''); // 검색문자열
@@ -19,10 +20,17 @@ function App() {
 
   return (
     <div className="App">
-      <div className='search-container'>
-        <h1>LOL 전적</h1>
-        <input type="text" onChange={(e) => setSearchText(e.target.value)} />
-        <button onClick={getPlayerGames}>최근 5게임의 정보 검색</button>
+      <div className={styles['search-container']}>
+        <h1>LOLY.GG</h1>
+
+        <input 
+          type="text" 
+          className={styles['app-searchBox']}
+          onChange={(e) => setSearchText(e.target.value)} 
+        />
+        <button onClick={getPlayerGames} className={styles['app-searchButton']} >
+          <FcSearch className={styles['app-searchButton-icons']}/>
+        </button>
       </div>
       <Match gameList={gameList} searchText={searchText}/>
     </div>
