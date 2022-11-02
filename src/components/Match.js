@@ -11,7 +11,7 @@ const Match = ({gameList, searchText}) => {
                     gameList.length !== 0 ? 
                     <>
                         <h3 className={styles["gameData-title"]}>매치 검색결과</h3>
-                        <SummonerProfile />
+                        <SummonerProfile gameList={gameList} searchText={searchText} />
                         {
                             gameList.map((gameData, index) => (
     

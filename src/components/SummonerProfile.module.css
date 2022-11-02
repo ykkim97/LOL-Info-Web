@@ -1,0 +1,40 @@
+.summonerProfile-container {
+    background: linear-gradient(to bottom, #72ece2, #2ac4d8);
+    width: 90%;
+    height: 280px;
+    margin: 20px auto;
+}
+
+.summonerProfile-profile {
+    margin: auto;
+    margin-left: 20px;
+    margin-top: 7px;
+    width: 25%;
+    height: 80%;
+    border: 1px solid black;
+    padding: 10px;
+    float: left;
+}
+
+.summonerProfile-lankInfo {
+    display: flex;
+    width: 60%;
+    height: 80%;
+    float: right;
+    border: 1px solid black;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 2px;
+    font-size: 10px;
+    justify-content: center;
+}
+
+.summonerProfile-soloLank {
+    border: 1px solid black;
+    width: 40%;
+}
+
+.summonerProfile-freeLank {
+    border: 1px solid black;
+    width: 40%;
+}

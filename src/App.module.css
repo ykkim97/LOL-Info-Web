@@ -1,6 +1,8 @@
 .App {
     margin: auto;
     width: 70%;
+    background: linear-gradient(to bottom, #ffffff, #eef0f0);
+    
 }
 
 .search-container {
