@@ -20,6 +20,15 @@ const getPlayerPUUID = (playerName) => {
         .catch((error) => console.log(error));
 }
 
+// 소환사의 id값을 가져오는 함수
+const getPlayerID = (playerName) => {
+    return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}?api_key=${API_KEY}`)
+    .then(response => {
+        return response.data.id;
+    })
+    .catch((error) => console.log(error));
+}
+
 // GET past5Games (과거 5게임 가져오기)
 // localhost:4000/past5Games
 app.get('/past5Games', async (req, res) => {
@@ -49,6 +58,21 @@ app.get('/past5Games', async (req, res) => {
     // save infomation above in an array, give array as JSON response to user
     // [Game1Object, Game2Object, Game3Object, ...]
     res.json(matchDataArray); 
+})
+
+app.get('/tier', async (req, res) => {
+    const playerName = '두되지';
+    const ID = await getPlayerID(playerName);
+    const API_CALL = `https://kr.api.riotgames.com/lol/league/v4/entries/by-summoner/${ID}?api_key=${API_KEY}`;
+
+    const leagueDataArray = [];
+    
+    const leagueData = await axios.get(API_CALL)
+        .then(response => response.data)
+        .catch(error => console.log(error))
+    
+
+
 })
 
 

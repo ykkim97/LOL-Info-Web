@@ -27,14 +27,17 @@ function App() {
           type="text" 
           className={styles['app-searchBox']}
           onChange={(e) => {
-            setSearchText(encodeURIComponent(e.target.value));
+            setSearchText((prev) => {
+              return prev = encodeURIComponent(e.target.value)
+            });
           }} 
         />
         <button onClick={getPlayerGames} className={styles['app-searchButton']} >
           <FcSearch className={styles['app-searchButton-icons']}/>
         </button>
       </div>
-      <Match gameList={gameList} searchText={searchText}/>
+      
+      <Match gameList={gameList} searchText={searchText} />
     </div>
   );
 }

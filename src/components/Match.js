@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Match.module.css";
 import SummonerProfile from "./SummonerProfile";
 
-const Match = ({gameList, searchText}) => {
+const Match = ({ gameList, searchText }) => {
     return (
         <>
             {searchText === '' ?
