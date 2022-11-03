@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from "./App.module.css";
 import Match from './components/Match';
 import { FcSearch } from "react-icons/fc";
+import championData from "./Data/Champions/ChampionData.js";
 
 function App() {
   const [searchText, setSearchText] = useState(''); // 검색문자열
@@ -28,12 +29,12 @@ function App() {
   }
 
   console.log(leagueList) // 소환사 리그정보(티어정보)
+  console.log(championData[0]); // 챔피언데이터가 들어있는 Array
 
   return (
     <div className={styles["App"]}>
       <div className={styles['search-container']}>
         <h1>LOLY.GG</h1>
-
         <input 
           type="text" 
           className={styles['app-searchBox']}

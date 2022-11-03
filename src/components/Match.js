@@ -4,6 +4,8 @@ import SummonerProfile from "./SummonerProfile";
 
 // 매치기록 컴포넌트
 const Match = ({ gameList, searchText, leagueList }) => {
+    console.log(gameList)
+
     return (
         <>
             {searchText === '' ?
@@ -49,7 +51,7 @@ const Match = ({ gameList, searchText, leagueList }) => {
                                     </div>
     
                                     <div className={styles['gameData-individual']}>
-                                        <p>킬관여</p>
+                                        <p>킬관여 : 0%</p>
                                     </div>
     
                                     <div className={styles['gameData-team']}>
