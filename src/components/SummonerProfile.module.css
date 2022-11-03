@@ -3,26 +3,30 @@
     width: 90%;
     height: 280px;
     margin: 20px auto;
+    margin-bottom: 5vh;
 }
 
 .summonerProfile-profile {
     margin: auto;
     margin-left: 20px;
     margin-top: 7px;
-    width: 25%;
+    width: 30%;
     height: 80%;
     border: 1px solid black;
     padding: 10px;
     float: left;
     text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 #summonerName {
-    font-size: 30px;
+    font-size: 1.3vw;
 }
 
 #summonerLevel {
-    font-size: 20px;
+    font-size: 1.2vw;
 }
 
 .summonerProfile-lankInfo {
@@ -36,19 +40,19 @@
     padding: 2px;
     font-size: 10px;
     justify-content: center;
-    
+    align-items: flex-end;
 }
 
 .summonerProfile-soloLank {
     border: 1px solid black;
     width: 40%;
-    font-size: 15px;
+    font-size: 1vw;
     list-style: none;
 }
 
 .summonerProfile-freeLank {
     border: 1px solid black;
     width: 40%;
-    font-size: 15px;
+    font-size: 1vw;
     list-style: none;
 }
