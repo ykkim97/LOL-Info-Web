@@ -53,7 +53,6 @@ function App() {
           <FcSearch className={styles['app-searchButton-icons']}/>
         </button>
       </div>
-      <img src={'https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/Syndra.png'}/> {/* 특정챔피언의 이미지를 불러오는데는 성공 */}
       <Match gameList={gameList} searchText={searchText} leagueList={leagueList}/>
     </div>
   );

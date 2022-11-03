@@ -68,7 +68,6 @@
     list-style: none;
 }
 
-.gameData-team1 p,
-.gameData-team2 p {
-    /* text-align: center; */
+.gameData-championMiniFaceImg {
+    width: 20px;
 }
