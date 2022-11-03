@@ -61,35 +61,35 @@ const Match = ({ gameList, searchText, leagueList }) => {
                                             <ul>
                                                 <li>
                                                     <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${gameData.info.participants[0].championName}.png`}
+                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[0].championName}.png`}
                                                         className={styles['gameData-championMiniFaceImg']}
                                                     />
                                                     {gameData.info.participants[0].summonerName}
                                                 </li>
                                                 <li>
                                                     <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${gameData.info.participants[1].championName}.png`}
+                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[1].championName}.png`}
                                                         className={styles['gameData-championMiniFaceImg']}
                                                     />
                                                     {gameData.info.participants[1].summonerName}
                                                 </li>
                                                 <li>
                                                     <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${gameData.info.participants[2].championName}.png`}
+                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[2].championName}.png`}
                                                         className={styles['gameData-championMiniFaceImg']}
                                                     />
                                                     {gameData.info.participants[2].summonerName}
                                                 </li>
                                                 <li>
                                                     <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${gameData.info.participants[3].championName}.png`}
+                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[3].championName}.png`}
                                                         className={styles['gameData-championMiniFaceImg']}
                                                     />
                                                     {gameData.info.participants[3].summonerName}
                                                 </li>
                                                 <li>
                                                     <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${gameData.info.participants[4].championName}.png`}
+                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[4].championName}.png`}
                                                         className={styles['gameData-championMiniFaceImg']}
                                                     />
                                                     {gameData.info.participants[4].summonerName}
@@ -101,35 +101,35 @@ const Match = ({ gameList, searchText, leagueList }) => {
                                             <ul>
                                                 <li>
                                                     <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${gameData.info.participants[5].championName}.png`}
+                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[5].championName}.png`}
                                                         className={styles['gameData-championMiniFaceImg']}
                                                     />
                                                     {gameData.info.participants[5].summonerName}
                                                 </li>
                                                 <li>
                                                     <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${gameData.info.participants[6].championName}.png`}
+                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[6].championName}.png`}
                                                         className={styles['gameData-championMiniFaceImg']}
                                                     />
                                                     {gameData.info.participants[6].summonerName}
                                                 </li>
                                                 <li>
                                                     <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${gameData.info.participants[7].championName}.png`}
+                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[7].championName}.png`}
                                                         className={styles['gameData-championMiniFaceImg']}
                                                     />
                                                     {gameData.info.participants[7].summonerName}
                                                 </li>
                                                 <li>
                                                     <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${gameData.info.participants[8].championName}.png`}
+                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[8].championName}.png`}
                                                         className={styles['gameData-championMiniFaceImg']}
                                                     />
                                                     {gameData.info.participants[8].summonerName}
                                                 </li>
                                                 <li>
                                                     <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${gameData.info.participants[9].championName}.png`}
+                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[9].championName}.png`}
                                                         className={styles['gameData-championMiniFaceImg']}
                                                     />
                                                     {gameData.info.participants[9].summonerName}
