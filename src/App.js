@@ -28,7 +28,7 @@ function App() {
       .catch((error) => console.log(error));
   }
 
-  console.log(gameList); // 매치 정보
+  console.log(gameList, "gameList"); // 매치 정보
   console.log(leagueList, "leagueList") // 소환사 리그정보(티어정보)
   console.log(championData, "championData"); // 챔피언데이터가 들어있는 Array
 

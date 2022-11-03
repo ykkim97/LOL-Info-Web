@@ -1,5 +1,5 @@
 .summonerProfile-container {
-    background: linear-gradient(to bottom, #72ece2, #2ac4d8);
+    background: linear-gradient(to bottom, #edf1f1, #f1f5f5);
     width: 90%;
     height: 280px;
     margin: 20px auto;
@@ -44,15 +44,15 @@
 }
 
 .summonerProfile-soloLank {
-    border: 1px solid black;
+    border: 1px dotted rgb(165, 165, 165);
     width: 40%;
-    font-size: 1vw;
+    font-size: 15px;
     list-style: none;
 }
 
 .summonerProfile-freeLank {
-    border: 1px solid black;
+    border: 1px dotted rgb(165, 165, 165);
     width: 40%;
-    font-size: 1vw;
+    font-size: 15px;
     list-style: none;
 }
