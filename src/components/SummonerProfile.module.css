@@ -56,3 +56,9 @@
     font-size: 15px;
     list-style: none;
 }
+
+.emblemImg {
+    width: 70px;
+    height: 70px;
+    text-align: center;
+}

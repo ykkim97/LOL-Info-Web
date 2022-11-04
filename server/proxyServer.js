@@ -8,7 +8,16 @@ const app = express();
 app.use(cors());
 
 // API key
-const API_KEY = "RGAPI-31d4d76d-d4dd-4ae6-a8d6-089d68a618e0";
+const API_KEY = "RGAPI-3c668432-cc17-45f4-a461-3137a00e3433";
+
+// 소환사의 puuid값을 가져오는 함수
+const getPlayerInformation = (playerName) => {
+    return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}?api_key=${API_KEY}`)
+        .then(response => {
+            return response.data;
+        })
+        .catch((error) => console.log(error));
+}
 
 // 소환사의 puuid값을 가져오는 함수
 const getPlayerPUUID = (playerName) => {
@@ -29,6 +38,17 @@ const getPlayerID = (playerName) => {
     })
     .catch((error) => console.log(error));
 }
+
+// GET information (소환사 정보 가져오기)
+// localhost:4000/information
+app.get('/information', async (req, res) => {
+    const playerName = req.query.searchText;
+
+    // information (소환사 정보 얻어오기)
+    const information = await getPlayerInformation(playerName);
+
+    res.json(information); 
+})
 
 // GET past5Games (과거 5게임 가져오기)
 // localhost:4000/past5Games
