@@ -11,6 +11,7 @@ function App() {
   const [gameList, setGameList] = useState([]); // 매치정보가 들어갈 Array
   const [leagueList, setLeagueList] = useState([]); // 소환사 리그정보(티어정보)가 들어갈 Array
 
+  // test
   // 소환사 정보를 가져오는 함수
   const getPlayerInformation = (e) => {
     axios.get('http://localhost:4000/information', {params : {searchText : searchText}})
