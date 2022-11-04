@@ -2,14 +2,20 @@ import React, { useEffect, useState } from "react";
 import styles from "./SummonerProfile.module.css";
 
 // 소환사 프로필 컴포넌트
-const SummonerProfile = ({ gameList, searchText, leagueList }) => {
+const SummonerProfile = ({ gameList, searchText, leagueList, profileIconID }) => {
     
     return (
         <>
             <div className={styles['summonerProfile-container']}>
                 <div className={styles['summonerProfile-profile']}>
-                    <h3 id={styles["summonerName"]}>{leagueList[0][0]?.summonerName}</h3>
-                    <h4 id={styles["summonerLevel"]}>level </h4>
+                    <img 
+                        src={`http://ddragon.leagueoflegends.com/cdn/12.21.1/img/profileicon/${profileIconID}.png`} 
+                        id={styles["summonerProfileIcon"]}
+                    />
+                    <div className={styles['summonerProfile-profile-userInfo']}>
+                        <h3 id={styles["summonerName"]}>{leagueList[0][0]?.summonerName}</h3>
+                        <h4 id={styles["summonerLevel"]}>level </h4>
+                    </div>
                 </div>
                 <div className={styles['summonerProfile-lankInfo']}>
                     <ul className={styles['summonerProfile-soloLank']}>

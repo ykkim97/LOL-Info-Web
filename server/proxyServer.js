@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 
 // API key
-const API_KEY = "RGAPI-31d4d76d-d4dd-4ae6-a8d6-089d68a618e0";
+const API_KEY = "RGAPI-3c668432-cc17-45f4-a461-3137a00e3433";
 
 // 소환사의 puuid값을 가져오는 함수
 const getPlayerPUUID = (playerName) => {
@@ -24,10 +24,19 @@ const getPlayerPUUID = (playerName) => {
 // 소환사의 id값을 가져오는 함수 (id는 encryptedSummonerId값)
 const getPlayerID = (playerName) => {
     return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}?api_key=${API_KEY}`)
-    .then(response => {
-        return response.data.id;
-    })
-    .catch((error) => console.log(error));
+        .then(response => {
+            return response.data.id;
+        })
+        .catch((error) => console.log(error));
+}
+
+// 소환사의 프로필아이콘 ID값을 가져오는 함수
+const getPlayerProfileIconID = (playerName) => {
+    return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}?api_key=${API_KEY}`)
+        .then(response => {
+            return response.data.profileIconId;
+        })
+        .catch((error) => console.log(error));
 }
 
 // GET past5Games (과거 5게임 가져오기)
@@ -76,6 +85,14 @@ app.get('/tier', async (req, res) => {
     leagueDataArray.push(leagueData);
 
     res.json(leagueDataArray)
+})
+
+// GET profileIconID (프로필아이콘id값 가져오기)
+// localhost:4000/profileIcon
+app.get('/profileIcon', async (req, res) => {
+    const playerName = req.query.searchText;
+    const profileIconID = await getPlayerProfileIconID(playerName);
+    res.json(profileIconID)
 })
 
 // port 4000
