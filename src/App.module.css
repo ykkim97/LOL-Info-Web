@@ -1,0 +1,41 @@
+.App {
+    margin: auto;
+    width: 70%;
+    background: linear-gradient(to left, #e6fffc, #bfdbf5);
+    
+}
+
+.search-container {
+    text-align: center;
+    background: linear-gradient(to bottom, #72ece2, #2ac4d8);
+    height: 150px;
+}
+
+.app-searchBox {
+    width: 50%;
+    height: 30px;
+    font-size: 15px;
+    vertical-align: middle;
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.app-searchButton {
+    background-color: rgb(255, 255, 255);
+    border: 3px solid black;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.app-searchButton-icons {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.app-searchButton:hover {
+    background-color: rgb(226, 221, 221);
+}

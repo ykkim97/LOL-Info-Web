@@ -1,0 +1,84 @@
+.gameData-title {
+    text-align: center;
+}
+
+.gameData-container {
+    margin: auto;
+    width: 90%;
+    height: 200px;
+    background: linear-gradient(to bottom, #edf1f1, #f1f5f5);
+    border: 3px solid rgb(149, 153, 153);
+    border-bottom: 6px solid rgb(149, 153, 153);
+    border-right: 4px solid rgb(149, 153, 153);
+    border-left: 4px solid rgb(149, 153, 153);
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 5vh;
+}
+
+.gameData-gamemode {
+    padding: 10px;
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameData-champion {
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+    border: 1px dotted rgb(165, 165, 165);
+}
+
+.gameData-kda {
+    width: 10%;
+    padding: 10px;
+    text-align: center;
+    border: 1px dotted rgb(165, 165, 165);
+}
+
+.gameData-individual {
+    text-align: center;
+    padding: 10px;
+    width: 5%;
+    border: 1px dotted rgb(165, 165, 165);
+}
+
+.gameData-team {
+    display: flex;
+    border: 1px dotted rgb(165, 165, 165);
+    width: 50%;
+}
+
+.gameData-team1 {
+    width: 70%;
+    border: 1px dotted rgb(165, 165, 165);
+    
+}
+
+.gameData-team2 {
+    width: 70%;
+    border: 1px dotted rgb(165, 165, 165);
+}
+
+.gameData-teamtitle {
+    text-align: center;
+}
+
+.gameData-team1 ul,
+.gameData-team2 ul {
+    list-style: none;
+}
+
+.gameData-team1 li,
+.gameData-team2 li {
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.gameData-championMiniFaceImg {
+    width: 25px;
+    margin-right: 5px;
+}
