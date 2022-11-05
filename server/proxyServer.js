@@ -39,15 +39,6 @@ const getPlayerID = (playerName) => {
         .catch((error) => console.log(error));
 }
 
-// 소환사의 프로필아이콘 ID값을 가져오는 함수
-const getPlayerProfileIconID = (playerName) => {
-    return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}?api_key=${API_KEY}`)
-        .then(response => {
-            return response.data.profileIconId;
-        })
-        .catch((error) => console.log(error));
-}
-
 // GET information (소환사 정보 가져오기)
 // localhost:4000/information
 app.get('/information', async (req, res) => {
@@ -105,14 +96,6 @@ app.get('/tier', async (req, res) => {
     leagueDataArray.push(leagueData);
 
     res.json(leagueDataArray)
-})
-
-// GET profileIconID (프로필아이콘id값 가져오기)
-// localhost:4000/profileIcon
-app.get('/profileIcon', async (req, res) => {
-    const playerName = req.query.searchText;
-    const profileIconID = await getPlayerProfileIconID(playerName);
-    res.json(profileIconID)
 })
 
 // port 4000

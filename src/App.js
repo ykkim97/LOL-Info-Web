@@ -10,7 +10,6 @@ function App() {
   const [information, setInformation] = useState([]); // 소환사 정보가 들어갈 Array
   const [gameList, setGameList] = useState([]); // 매치정보가 들어갈 Array
   const [leagueList, setLeagueList] = useState([]); // 소환사 리그정보(티어정보)가 들어갈 Array
-  const [profileIconID, setProfileIconID] = useState(); // 소환사 프로필아이콘 ID값
 
   // 소환사 정보를 가져오는 함수
   const getPlayerInformation = (e) => {
@@ -39,15 +38,6 @@ function App() {
       .catch((error) => console.log(error));
   }
 
-  // 소환사 프로필아이콘ID를 가져오는 함수
-  const getPlayerprofileID = (e) => {
-    axios.get('http://localhost:4000/profileIcon', {params : {searchText : searchText}})
-      .then((response) => {
-        setProfileIconID(response.data);
-      })
-      .catch(error => console.log(error));
-  }
-
   console.log(information, "information"); // 소환사 정보
   console.log(gameList, "gameList"); // 매치 정보
   console.log(leagueList, "leagueList") // 소환사 리그정보(티어정보)
@@ -71,12 +61,11 @@ function App() {
           getPlayerInformation();
           getPlayerGames();
           getPlayerLeague();
-          getPlayerprofileID();
         }} className={styles['app-searchButton']} >
           <FcSearch className={styles['app-searchButton-icons']}/>
         </button>
       </div>
-      <Match information={information} gameList={gameList} searchText={searchText} leagueList={leagueList} profileIconID={profileIconID}/>
+      <Match information={information} gameList={gameList} searchText={searchText} leagueList={leagueList} />
     </div>
   );
 }
