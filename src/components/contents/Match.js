@@ -148,7 +148,7 @@ const Match = ({ information, gameList, searchText, leagueList, profileIconID })
                         }
                     </> :
                     <>
-                        <h3 className={styles["gameData-title"]}>검색결과없음{(searchText)}</h3>
+                        <h3 className={styles["gameData-title"]}>검색결과없음</h3>
                     </>
                 )
             }
