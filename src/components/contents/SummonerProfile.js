@@ -47,10 +47,10 @@ const SummonerProfile = ({ information, gameList, searchText, leagueList }) => {
                         <li>{leagueList[0][0]?.wins + leagueList[0][0]?.losses}전 {leagueList[0][0]?.wins}승 {leagueList[0][0]?.losses}패</li>
                     </ul>
                     <ul className={styles['summonerProfile-freeLank']}>
-                        {emblemImgs.map(list => {
+                        {emblemImgs.map((list, index) => {
                             if(list.key == leagueList[0][1]?.tier) {
                                 return (
-                                    <li><img src={list.Emblem} className={styles['emblemImg']}/></li>
+                                    <li key={index}><img src={list.Emblem} className={styles['emblemImg']}/></li>
                                 )
                             }
                         })}
