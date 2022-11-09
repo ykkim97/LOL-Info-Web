@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 
 // API key
-const API_KEY = "RGAPI-3cb848c7-5ba4-416e-bc0d-4eefba3ad938";
+const API_KEY = "RGAPI-5a0b1db0-8312-4919-8367-71564ae21c5c";
 
 // 소환사 정보를 가져오는 함수
 const getPlayerInformation = (playerName) => {

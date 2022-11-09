@@ -4,10 +4,12 @@
     margin: auto;
     padding: 40px;
     font-size: 25px;
+    background: linear-gradient(to right, rgb(157, 225, 241), rgb(182, 226, 240));
 }
 
 .championInfo-container {
     text-align: center;
+    background: linear-gradient(to right, rgb(126, 216, 238), rgb(214, 232, 238))
 }
 
 .championInfo-champContainer {
@@ -17,6 +19,7 @@
     padding: 20px;
     margin: 13px;
     box-shadow: 0 0 5px 1px rgb(66, 152, 173);
+    background: rgb(243, 241, 241);
     font-weight: bold;
     cursor: pointer;
 }

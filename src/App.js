@@ -5,6 +5,7 @@ import Templete from './components/Templete';
 import { Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import ChampionInfo from './pages/ChampionInfo';
+import ChampionDetailInfo from './pages/ChampionDetailInfo.js';
 
 function App() {
   const [searchText, setSearchText] = useState(''); // 검색문자열
@@ -74,6 +75,15 @@ function App() {
             />
           }>
         </Route>
+
+        <Route
+          path='/championInfo/:id'
+          element={
+            <ChampionDetailInfo
+              championData={championData}
+            />
+          }
+        ></Route>
 
       </Routes>
     </Templete>

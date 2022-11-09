@@ -1,0 +1,42 @@
+.championDetailInfo-container {
+    text-align: center;
+    border: 1px solid black;
+    width: 100%;
+}
+
+#championDetailInfo-img {
+    width: 300px;
+    padding-top: 80px;
+}
+
+#champion-name {
+    font-size: 50px;
+}
+
+#champion-title {
+    font-size: 15px;
+    padding-bottom : 30px;
+}
+
+#champion-blurb {
+    margin: auto;
+    width: 700px;
+}
+
+.championDetailInfo-stats {
+    padding-top: 30px;
+}
+
+.stats-contents {
+    list-style: none;
+    display: flex;
+    width: 500px;
+    border: 1px solid black;
+    margin: 2px auto;
+    justify-content: center;
+}
+
+.stats-contents div {
+    width: 100%;
+    padding: 5px;
+}
