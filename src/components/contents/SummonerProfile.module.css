@@ -10,15 +10,27 @@
     margin: auto;
     margin-left: 20px;
     margin-top: 7px;
-    width: 30%;
-    height: 80%;
+    width: 33%;
+    height: 240px;
     border: 1px solid black;
     padding: 10px;
     float: left;
     text-align: right;
     display: flex;
+    align-items: center;
+}
+
+.summonerProfile-profile-userInfo {
+    display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    margin: auto;
+}
+
+#summonerProfileIcon {
+    width: 150px;
+    height: 150px;
+    margin-top: 35px;
+    margin-right: 35px;
 }
 
 #summonerName {

@@ -3,7 +3,7 @@ import styles from "./Match.module.css";
 import SummonerProfile from "./SummonerProfile";
 
 // 매치기록 컴포넌트
-const Match = ({ information, gameList, searchText, leagueList }) => {
+const Match = ({ information, gameList, searchText, leagueList, profileIconID }) => {
 
     return (
         <>
@@ -13,7 +13,13 @@ const Match = ({ information, gameList, searchText, leagueList }) => {
                     gameList.length !== 0 ? 
                     <>
                         <h3 className={styles["gameData-title"]}>검색결과</h3>
-                        <SummonerProfile information={information} gameList={gameList} searchText={searchText} leagueList={leagueList} />
+                        <SummonerProfile 
+                            information={information}
+                            gameList={gameList} 
+                            searchText={searchText} 
+                            leagueList={leagueList} 
+                            profileIconID={profileIconID}
+                        />
                         {
                             gameList.map((gameData, index) => (
     
@@ -142,7 +148,7 @@ const Match = ({ information, gameList, searchText, leagueList }) => {
                         }
                     </> :
                     <>
-                        <h3 className={styles["gameData-title"]}>검색결과없음{(searchText)}</h3>
+                        <h3 className={styles["gameData-title"]}>검색결과없음</h3>
                     </>
                 )
             }

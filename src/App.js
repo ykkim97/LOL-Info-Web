@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import styles from "./App.module.css";
-import Match from './components/Match';
-import { FcSearch } from "react-icons/fc";
 import championData from "./Data/Champions/ChampionData.js";
+import Templete from './components/Templete';
+import { Routes, Route } from "react-router-dom";
+import Home from './pages/Home';
+import ChampionInfo from './pages/ChampionInfo';
+import ChampionDetailInfo from './pages/ChampionDetailInfo.js';
 
 function App() {
   const [searchText, setSearchText] = useState(''); // 검색문자열
@@ -45,29 +47,47 @@ function App() {
   console.log(championData, "championData"); // 챔피언데이터가 들어있는 Array
 
   return (
-    <div className={styles["App"]}>
-      <div className={styles['search-container']}>
-        <h1>LOLY.GG</h1>
-        
-        <input 
-          type="text" 
-          className={styles['app-searchBox']}
-          onChange={(e) => {
-            setSearchText((prev) => {
-              return prev = encodeURIComponent(e.target.value)
-            });
-          }} 
-        />
-        <button onClick={() => {
-          getPlayerGames();
-          getPlayerLeague();
-          getPlayerInformation();
-        }} className={styles['app-searchButton']} >
-          <FcSearch className={styles['app-searchButton-icons']}/>
-        </button>
-      </div>
-      <Match information={information} gameList={gameList} searchText={searchText} leagueList={leagueList}/>
-    </div>
+    <Templete>
+      <Routes>
+
+        {/* Route => / */}
+        <Route 
+          path='/' 
+          element={
+            <Home 
+              searchText={searchText} 
+              setSearchText={setSearchText}
+              information={information}
+              gameList={gameList}
+              leagueList={leagueList}
+              getPlayerInformation={getPlayerInformation}
+              getPlayerGames={getPlayerGames}
+              getPlayerLeague={getPlayerLeague}
+            />
+          }
+        ></Route>
+
+        {/* Route => /championInfo */}
+        <Route 
+          path='/championInfo' 
+          element={
+            <ChampionInfo 
+              championData={championData}
+            />
+          }>
+        </Route>
+
+        <Route
+          path='/championInfo/:id'
+          element={
+            <ChampionDetailInfo
+              championData={championData}
+            />
+          }
+        ></Route>
+
+      </Routes>
+    </Templete>
   );
 }
 
