@@ -31,8 +31,8 @@
     list-style: none;
     display: flex;
     width: 500px;
-    border: 1px solid green;
-    margin: auto;
+    border: 1px solid black;
+    margin: 2px auto;
     justify-content: center;
 }
 

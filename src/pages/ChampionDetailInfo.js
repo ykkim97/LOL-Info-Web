@@ -17,7 +17,7 @@ const ChampionDetailInfo = ({
     return (
         <div className={styles['championDetailInfo-container']}>
             <img 
-                src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${findChampionObject.name}.png`} 
+                src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${findChampionObject.id}.png`} 
                 id={styles['championDetailInfo-img']}
             />
             <h1 id={styles['champion-name']}>{findChampionObject.name}</h1>
