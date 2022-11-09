@@ -57,20 +57,32 @@
 
 .summonerProfile-soloLank {
     border: 1px dotted rgb(165, 165, 165);
-    width: 40%;
+    width: 50%;
     font-size: 15px;
     list-style: none;
+    margin: 0px;
+    padding: 3px;
+}
+
+.summonerProfile-soloLank li {
+    text-align: center;
 }
 
 .summonerProfile-freeLank {
     border: 1px dotted rgb(165, 165, 165);
-    width: 40%;
+    width: 50%;
     font-size: 15px;
     list-style: none;
+    margin: 0px;
+    padding: 3px;
+}
+
+.summonerProfile-freeLank li {
+    text-align: center;
 }
 
 .emblemImg {
-    width: 70px;
-    height: 70px;
+    width: 140px;
+    height: 140px;
     text-align: center;
 }
