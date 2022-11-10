@@ -32,7 +32,7 @@ const Match = ({ information, gameList, searchText, leagueList, profileIconID })
             }
         })
     ))
-    
+
     return (
         <>
             {searchText === '' ?
@@ -50,6 +50,7 @@ const Match = ({ information, gameList, searchText, leagueList, profileIconID })
                         />
                         {
                             gameList.map((gameData, index) => (
+                                // summonerTeamIsWin 배열의 해당 매치 기록의 승패를 확인하여 className을 변경
                                 <div key={index} className={styles[`gameData-${summonerTeamIsWin[index] ? 'win' : 'lose'}-container`]}>
                                     <h4 className={styles['gameData-gamemode']}>{gameData.info.gameMode}</h4>
     
