@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./ChampionInfo.module.css"
 
@@ -7,6 +8,7 @@ let urlID = 0;
 const ChampionInfo = (
     championData
 ) => {
+    
     const values = Object.values(championData.championData[0])
     console.log(values[3], "values")
     const name = Object.keys(values[3])
