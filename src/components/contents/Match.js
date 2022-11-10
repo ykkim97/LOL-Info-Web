@@ -1,10 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Match.module.css";
 import SummonerProfile from "./SummonerProfile";
 
 // 매치기록 컴포넌트
 const Match = ({ information, gameList, searchText, leagueList, profileIconID }) => {
+    // 소환사가 속한 팀의 teamId들을 저장할 summonerTeamIdsOfGamelist 배열 생성
+    // 소환사가 속한 팀의 전체 킬 수들을 저장할 killsOfGamelist 배열 생성
+    // 소환사가 속한 팀의 승리 여부들을 저장할 summonerTeamIsWin 배열 생성
+    const summonerTeamIdsOfGamelist = [];
+    const killsOfGamelist = [];
+    const summonerTeamIsWin = [];
 
+    gameList.map((gameData) => (
+        gameData.info.participants.map(participant => {
+            // gameData안의 각 participant의 summonrName과 디코딩된 searchText값이 대소문자구분없이 같을 경우 
+            if (participant.summonerName.toUpperCase() === (decodeURIComponent(searchText)).toUpperCase()) {
+                // 검색된 소환사의 teamId를 summonerTeamIdsOfGamelist 배열에 추가 
+                summonerTeamIdsOfGamelist.push(participant.teamId)
+            }
+        })
+    ))
+
+    gameList.map((gameData, index) => (
+        gameData.info.teams.map(team => {
+            // gameData의 팀들 중에서 검색된 소환사의 teamId를 비교 
+            if (team.teamId === summonerTeamIdsOfGamelist[index]) {
+                // 해당 팀의 전체 킬 수를 killsOfGamelist 배열에 추가
+                // 해당 팀의 승리 여부를 summonerTeamIsWin 배열에 추가
+                killsOfGamelist.push(team.objectives.champion.kills)
+                summonerTeamIsWin.push(team.win)
+            }
+        })
+    ))
+    
     return (
         <>
             {searchText === '' ?
@@ -22,8 +50,7 @@ const Match = ({ information, gameList, searchText, leagueList, profileIconID })
                         />
                         {
                             gameList.map((gameData, index) => (
-    
-                                <div key={index} className={styles['gameData-container']}>
+                                <div key={index} className={styles[`gameData-${summonerTeamIsWin[index] ? 'win' : 'lose'}-container`]}>
                                     <h4 className={styles['gameData-gamemode']}>{gameData.info.gameMode}</h4>
     
                                     <div className={styles['gameData-champion']}>
@@ -57,7 +84,17 @@ const Match = ({ information, gameList, searchText, leagueList, profileIconID })
                                     </div>
     
                                     <div className={styles['gameData-individual']}>
-                                        <p>킬관여 : 0%</p>
+                                        {gameData.info.participants.map(participant => {
+                                            // gameData안의 각 participant의 summonrName과 디코딩된 searchText값이 대소문자구분없이 같을 경우
+                                            if (participant.summonerName.toUpperCase() === (decodeURIComponent(searchText)).toUpperCase()) {
+                                                return (
+                                                    <div>
+                                                        {/* 소환사의 킬과 어시스트의 합을 소환사가 속한 팀의 전체 킬수로 나누고, 비율을 구함 */}
+                                                        <p>킬관여 : {((participant.kills + participant.assists) / killsOfGamelist[index] * 100).toFixed(0)}%</p>
+                                                    </div>
+                                                )
+                                            }
+                                        })}
                                     </div>
     
                                     <div className={styles['gameData-team']}>
