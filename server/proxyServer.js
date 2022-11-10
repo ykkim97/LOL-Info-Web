@@ -10,6 +10,9 @@ app.use(cors());
 // API key
 const API_KEY = "RGAPI-33297b64-e1cf-44e6-86c3-f226c03a8519";
 
+// 챔피언 정보를 가져오는 함수
+// const getChampionInfomation = ()
+
 // 소환사 정보를 가져오는 함수
 const getPlayerInformation = (playerName) => {
     return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}?api_key=${API_KEY}`)

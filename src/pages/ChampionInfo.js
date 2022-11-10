@@ -3,18 +3,13 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./ChampionInfo.module.css"
 
-let urlID = 0;
-
 const ChampionInfo = (
     championData
 ) => {
     
     const values = Object.values(championData.championData[0])
-    console.log(values[3], "values")
-    const name = Object.keys(values[3])
-    const test = Object.values(values[3])
-    console.log(name)
-    console.log(test)
+    const championNameArray = Object.keys(values[3]) // 챔피언명만 담긴 배열
+    const championObjectArray = Object.values(values[3]) // 챔피언정보가 담긴 객체들의 배열
 
     const navigate = useNavigate();
 
@@ -22,18 +17,18 @@ const ChampionInfo = (
         <>
             <h3 className={styles['championInfo-title']}>챔피언</h3>
             <div className={styles['championInfo-container']}>
-                {name.map((championName, index) => {
+                {championObjectArray.map((championName, index) => {
                     return (
                         <div 
                             className={styles['championInfo-champContainer']} 
                             key={index}
-                            onClick={() => {navigate(`/championInfo/${test[index].key}`)}}
+                            onClick={() => {navigate(`/championInfo/${championObjectArray[index].key}`)}}
                         >
                             <img 
-                                src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${championName}.png`} 
+                                src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${championObjectArray[index].id}.png`} 
                                 className={styles['championInfo-img']}
                             />
-                            <div>{championName}</div>
+                            <div>{championObjectArray[index].name}</div>
                         </div>
                     )})}
             </div>
