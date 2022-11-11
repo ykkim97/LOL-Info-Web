@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 
 // API key
-const API_KEY = "RGAPI-33297b64-e1cf-44e6-86c3-f226c03a8519";
+const API_KEY = "RGAPI-cfb83a07-dbe0-44cd-ace1-d4a8df3a4edc";
 
 // 챔피언 정보를 가져오는 함수
 // const getChampionInfomation = ()
