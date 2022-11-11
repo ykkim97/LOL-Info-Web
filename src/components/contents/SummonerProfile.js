@@ -27,7 +27,7 @@ const SummonerProfile = ({ information, gameList, searchText, leagueList }) => {
                         id={styles["summonerProfileIcon"]}
                     />
                     <div className={styles['summonerProfile-profile-userInfo']}>
-                        <h3 id={styles["summonerName"]}>{leagueList[0][0]?.summonerName}</h3>
+                        <h3 id={styles["summonerName"]}>{information.name}</h3>
                         <h4 id={styles["summonerLevel"]}>level {information.summonerLevel}</h4>
                     </div>
 
