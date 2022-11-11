@@ -25,7 +25,7 @@ const ChampionInfo = (
                             onClick={() => {navigate(`/championInfo/${championObjectArray[index].key}`)}}
                         >
                             <img 
-                                src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${championObjectArray[index].id}.png`} 
+                                src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${championObjectArray[index].id}.png`} 
                                 className={styles['championInfo-img']}
                             />
                             <div>{championObjectArray[index].name}</div>

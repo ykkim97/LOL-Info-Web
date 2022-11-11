@@ -60,7 +60,7 @@ const Match = ({ information, gameList, searchText, leagueList, profileIconID })
                                             if (participant.summonerName.toUpperCase() === (decodeURIComponent(searchText)).toUpperCase()) {
                                                 return (
                                                     <div key={index}>
-                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${participant.championName}.png`}/>
+                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${participant.championName}.png`}/>
                                                         <h3>{participant.championName}</h3>
                                                     </div>
                                                 )
