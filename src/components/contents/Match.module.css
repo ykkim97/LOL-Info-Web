@@ -2,8 +2,6 @@
     text-align: center;
 }
 
-/* .gameData-container 항목에서 .gameData-win-container로 이름 변경 및
-.gameData-lose-container 항목 추가(겹치는 부분이 많아 하나로 합침) */
 .gameData-win-container,
 .gameData-lose-container {
     margin: auto;
@@ -12,17 +10,11 @@
     /* background 속성 삭제 */
     background: rgb(170, 248, 155);
     border: 3px solid rgb(149, 153, 153);
-    /* border 속성이 중복되므로 삭제
-    border-bottom: 6px solid rgb(149, 153, 153);
-    border-right: 4px solid rgb(149, 153, 153);
-    border-left: 4px solid rgb(149, 153, 153); */
     border-radius: 10px;
     display: flex;
     margin-bottom: 5vh;
 }
 
-/* .gameData-lose-container 항목의 
-background 속성 부분만 따로 변경 */
 .gameData-lose-container {
     background: rgb(255, 166, 166);
 }
