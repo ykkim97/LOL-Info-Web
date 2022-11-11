@@ -35,7 +35,7 @@ const SummonerProfile = ({ information, gameList, searchText, leagueList }) => {
                 {/* 솔로랭크와 자유랭크의 순서를 솔로랭크가 먼저오게 하려고 map을 따로 구현 */}
                 <div className={styles['summonerProfile-rankInfo']}>
                     {/* leagueList[0] 배열에서 원소가 없으면 No Ranked가 나오게 구현 */}
-                    {leagueList[0].length === 0 ? <p className={styles['summonerProfile-noRanked']}>No Ranked</p> : <p></p>}
+                    {leagueList[0].length === 0 ? <p className={styles['summonerProfile-unRanked']}>Unranked</p> : <p></p>}
                     {/* leagueList[0] 배열의 list 원소들 중에서 솔로랭크와 자유랭크를 구별하기 위해 map을 통해 접근, queueType으로 구별 */}
                     {leagueList[0].map((list) => {
                         if(list.queueType === "RANKED_SOLO_5x5") {
