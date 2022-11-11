@@ -32,33 +32,52 @@ const SummonerProfile = ({ information, gameList, searchText, leagueList }) => {
                     </div>
 
                 </div>
-                <div className={styles['summonerProfile-lankInfo']}>                     
-                    <ul className={styles['summonerProfile-soloLank']}>
-                        {emblemImgs.map((list, index) => {
-                            if(list.key == leagueList[0][0]?.tier) {
-                                return (
-                                    <li key={index}><img src={list.Emblem} className={styles['emblemImg']}/></li>
-                                )
-                            }
-                        })}
-                        <li>리그 : 솔로랭크 5X5</li>
-                        <li>티어 : {leagueList[0][0]?.tier} {leagueList[0][0]?.rank}</li>
-                        <li>리그 포인트 : {leagueList[0][0]?.leaguePoints}</li>
-                        <li>{leagueList[0][0]?.wins + leagueList[0][0]?.losses}전 {leagueList[0][0]?.wins}승 {leagueList[0][0]?.losses}패</li>
-                    </ul>
-                    <ul className={styles['summonerProfile-freeLank']}>
-                        {emblemImgs.map((list, index) => {
-                            if(list.key == leagueList[0][1]?.tier) {
-                                return (
-                                    <li key={index}><img src={list.Emblem} className={styles['emblemImg']}/></li>
-                                )
-                            }
-                        })}
-                        <li>리그 : 자유랭크 5X5</li>
-                        <li>티어 : {leagueList[0][1]?.tier} {leagueList[0][1]?.rank}</li>
-                        <li>리그 포인트 : {leagueList[0][1]?.leaguePoints}</li>
-                        <li>{leagueList[0][1]?.wins + leagueList[0][1]?.losses}전 {leagueList[0][1]?.wins}승 {leagueList[0][1]?.losses}패</li>
-                    </ul>
+                {/* 솔로랭크와 자유랭크의 순서를 솔로랭크가 먼저오게 하려고 map을 따로 구현 */}
+                <div className={styles['summonerProfile-rankInfo']}>
+                    {/* leagueList[0] 배열에서 원소가 없으면 No Ranked가 나오게 구현 */}
+                    {leagueList[0].length === 0 ? <p className={styles['summonerProfile-noRanked']}>No Ranked</p> : <p></p>}
+                    {/* leagueList[0] 배열의 list 원소들 중에서 솔로랭크와 자유랭크를 구별하기 위해 map을 통해 접근, queueType으로 구별 */}
+                    {leagueList[0].map((list) => {
+                        if(list.queueType === "RANKED_SOLO_5x5") {
+                            return (
+                                <ul className={styles['summonerProfile-soloRank']}>
+                                    {/* 기존의 emblemImgs의 list는 leagueList[0]의 list와 겹치므로 imgList로 변경, 구별된 list로부터 티어 및 리그포인트에 접근하도록 수정 */}
+                                    {emblemImgs.map((imgList, index) => {
+                                        if(imgList.key == list.tier) {
+                                            return (
+                                                <li key={index}><img src={imgList.Emblem} className={styles['emblemImg']}/></li>
+                                            )
+                                        }
+                                    })}
+                                    <li>리그 : 솔로랭크 5X5</li>
+                                    <li>티어 : {list.tier} {list.rank}</li>
+                                    <li>리그 포인트 : {list.leaguePoints}</li>
+                                    <li>{list.wins + list.losses}전 {list.wins}승 {list.losses}패</li>
+                                </ul>
+                            )
+                        }
+                    })}
+                    {leagueList[0].map((list) => {
+                        {/* leagueList[0] 배열의 list 원소들 중에서 솔로랭크와 자유랭크를 구별하기 위해 map을 통해 접근, queueType으로 구별 */}
+                        if(list.queueType === "RANKED_FLEX_SR") {
+                            return (
+                                <ul className={styles['summonerProfile-freeRank']}>
+                                    {/* 기존의 emblemImgs의 list는 leagueList[0]의 list와 겹치므로 imgList로 변경, 구별된 list로부터 티어 및 리그포인트에 접근하도록 수정 */}
+                                    {emblemImgs.map((imgList, index) => {
+                                        if(imgList.key == list.tier) {
+                                            return (
+                                                <li key={index}><img src={imgList.Emblem} className={styles['emblemImg']}/></li>
+                                            )
+                                        }
+                                    })}
+                                    <li>리그 : 자유랭크 5X5</li>
+                                    <li>티어 : {list.tier} {list.rank}</li>
+                                    <li>리그 포인트 : {list.leaguePoints}</li>
+                                    <li>{list.wins + list.losses}전 {list.wins}승 {list.losses}패</li>
+                                </ul>
+                            )
+                        }
+                    })}
                 </div>
             </div>
         </>

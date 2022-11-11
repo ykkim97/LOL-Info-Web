@@ -41,7 +41,7 @@
     font-size: 20px;
 }
 
-.summonerProfile-lankInfo {
+.summonerProfile-rankInfo {
     display: flex;
     width: 60%;
     height: 80%;
@@ -55,7 +55,13 @@
     align-items: flex-end;
 }
 
-.summonerProfile-soloLank {
+/* No Ranked의 크기 및 위치를 조정하기 위한 .summonerProfile-noRanked 항목 추가 */
+.summonerProfile-noRanked {
+    font-size: 50px;
+    padding-bottom: 25px;
+}
+
+.summonerProfile-soloRank {
     border: 1px dotted rgb(165, 165, 165);
     width: 50%;
     font-size: 15px;
@@ -64,11 +70,11 @@
     padding: 3px;
 }
 
-.summonerProfile-soloLank li {
+.summonerProfile-soloRank li {
     text-align: center;
 }
 
-.summonerProfile-freeLank {
+.summonerProfile-freeRank {
     border: 1px dotted rgb(165, 165, 165);
     width: 50%;
     font-size: 15px;
@@ -77,7 +83,7 @@
     padding: 3px;
 }
 
-.summonerProfile-freeLank li {
+.summonerProfile-freeRank li {
     text-align: center;
 }
 
