@@ -44,7 +44,7 @@
 .summonerProfile-rankInfo {
     display: flex;
     width: 60%;
-    height: 80%;
+    height: 240px;
     float: right;
     border: 1px solid black;
     margin-top: 20px;
@@ -55,10 +55,11 @@
     align-items: flex-end;
 }
 
-/* No Ranked의 크기 및 위치를 조정하기 위한 .summonerProfile-noRanked 항목 추가 */
-.summonerProfile-noRanked {
-    font-size: 50px;
-    padding-bottom: 25px;
+.summonerProfile-unRanked {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(100, 97, 97);
+    padding-bottom: 50px;
 }
 
 .summonerProfile-soloRank {
