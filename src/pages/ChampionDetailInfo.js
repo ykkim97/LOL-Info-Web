@@ -17,19 +17,22 @@ const ChampionDetailInfo = ({
     let championDetailEntries = []
     let spellsArray = []
 
+    const [skills, setSkills] = useState([]) // 챔피언 스킬 정보
+
+    // 챔피언세부정보를 요청하는 함수
     const getChampionDetail = async () => {
         const data = await axios.get(`https://ddragon.leagueoflegends.com/cdn/10.6.1/data/ko_KR/champion/${findChampionObject.id}.json`)
             .then((response) => response.data)
         championDetailArray.push(data)
-        // console.log(championDetailArray)
+        console.log(championDetailArray, "championDetailArray")
         championDetailEntries = Object.values(championDetailArray[0].data)
-        // console.log(championDetailEntries[0].spells, "championDetailEntries")
+        console.log(championDetailEntries, "championDetailEntries")
         spellsArray = championDetailEntries[0].spells;
-        console.log(spellsArray)
+        setSkills([...spellsArray])
     }
 
     useEffect(() => {
-        getChampionDetail();
+        getChampionDetail(); // 챔피언세부정보를 요청하는 함수 실행
     }, [])
 
     return (
@@ -56,8 +59,10 @@ const ChampionDetailInfo = ({
             </div>
 
             <div className={styles['championDetailInfo-skillsContainer']}>
-                <h3>스킬정보</h3>
-                
+                <h3>스킬 정보</h3>
+                {skills.map(skill => (
+                    <h4>{skill.name}</h4>
+                ))}
             </div>
         </>
         

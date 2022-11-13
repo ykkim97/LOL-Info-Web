@@ -27,9 +27,9 @@ const Home = ({
                 }} 
                 />
                 <button onClick={() => {
-                getPlayerInformation();
-                getPlayerGames();
-                getPlayerLeague();
+                    getPlayerInformation();
+                    getPlayerGames();
+                    getPlayerLeague();
                 }} className={styles['app-searchButton']} >
                 <FcSearch className={styles['app-searchButton-icons']}/>
                 </button>
