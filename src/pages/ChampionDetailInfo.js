@@ -16,8 +16,10 @@ const ChampionDetailInfo = ({
     const championDetailArray = []
     let championDetailEntries = []
     let spellsArray = []
+    let passiveArray = []
 
     const [skills, setSkills] = useState([]) // 챔피언 스킬 정보
+    const [passive, setPassive] = useState({}) // 챔피언 패시브 정보
 
     // 챔피언세부정보를 요청하는 함수
     const getChampionDetail = async () => {
@@ -28,7 +30,9 @@ const ChampionDetailInfo = ({
         championDetailEntries = Object.values(championDetailArray[0].data)
         console.log(championDetailEntries, "championDetailEntries")
         spellsArray = championDetailEntries[0].spells;
-        setSkills([...spellsArray])
+        passiveArray = championDetailEntries[0].passive;
+        setSkills([...spellsArray]);
+        setPassive(passiveArray);
     }
 
     useEffect(() => {
@@ -60,8 +64,17 @@ const ChampionDetailInfo = ({
 
             <div className={styles['championDetailInfo-skillsContainer']}>
                 <h3>스킬 정보</h3>
-                {skills.map(skill => (
-                    <h4>{skill.name}</h4>
+                {/* 패시브 */}
+                <div>
+                    <h4>{passive.name} (Passive)</h4>
+                    {passive.description}
+                </div>
+                {/* Q, W, E, R 스킬 */}
+                {skills.map((skill, index) => (
+                    <div key={index}>
+                        <h4>{skill.name}</h4>
+                        {skill.description}
+                    </div>
                 ))}
             </div>
         </>
