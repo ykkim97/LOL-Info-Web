@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 import styles from "./ChampionDetailInfo.module.css";
 
 const ChampionDetailInfo = ({
-    championData
+    championData,
+    item
 }) => {
     const { id } = useParams();
     const championArray = Object.values(championData[0].data)
@@ -44,7 +45,9 @@ const ChampionDetailInfo = ({
 
     useEffect(() => {
         getChampionDetail(); // 챔피언세부정보를 요청하는 함수 실행
+        console.log(item, "item")
     }, [])
+
 
     return (
         <>
@@ -86,8 +89,9 @@ const ChampionDetailInfo = ({
             </div>
 
             <div>
-                <h2>스킨</h2>
-                
+                <h2>추천 아이템</h2>
+                <div>
+                </div>
             </div>
         </>
         

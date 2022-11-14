@@ -10,8 +10,14 @@ app.use(cors());
 // API key
 const API_KEY = "RGAPI-ec1e1276-ca87-4d4a-aad3-689edbdb73a0";
 
-// 챔피언 정보를 가져오는 함수
-// const getChampionInfomation = ()
+// 아이템 정보를 가져오는 함수
+const getItemInfomation = () => {
+    return axios.get(`https://ddragon.leagueoflegends.com/cdn/12.12.1/data/ko_KR/item.json`)
+        .then(response => {
+            return response.data;
+        })
+        .catch(error => console.log(error))
+}
 
 // 소환사 정보를 가져오는 함수
 const getPlayerInformation = (playerName) => {
@@ -19,7 +25,7 @@ const getPlayerInformation = (playerName) => {
         .then(response => {
             return response.data;
         })
-        .catch((error) => console.log(error));
+        .catch(error => console.log(error));
 }
 
 // 소환사의 puuid값을 가져오는 함수
@@ -30,7 +36,7 @@ const getPlayerPUUID = (playerName) => {
             console.log(playerName)
             return response.data.puuid;
         })
-        .catch((error) => console.log(error));
+        .catch(error => console.log(error));
 }
 
 // 소환사의 id값을 가져오는 함수 (id는 encryptedSummonerId값)
@@ -39,8 +45,13 @@ const getPlayerID = (playerName) => {
         .then(response => {
             return response.data.id;
         })
-        .catch((error) => console.log(error));
+        .catch(error => console.log(error));
 }
+
+app.get('/item', async (req, res) => {
+    const infomation = await getItemInfomation();
+    res.json(infomation);
+})
 
 // GET information (소환사 정보 가져오기)
 // localhost:4000/information
@@ -65,7 +76,7 @@ app.get('/past5Games', async (req, res) => {
     // its going to give us a list of game IDs
     const gameIDs = await axios.get(API_CALL)
         .then(response => response.data)
-        .catch((error) => console.log(error));
+        .catch(error => console.log(error));
     console.log(gameIDs, " => gameIDs");
 
     // loop through game IDs
@@ -75,7 +86,7 @@ app.get('/past5Games', async (req, res) => {
         const matchID = gameIDs[i];
         const matchData = await axios.get(`https://asia.api.riotgames.com/lol/match/v5/matches/${matchID}?api_key=${API_KEY}`)
             .then(response => response.data)
-            .catch((error) => console.log(error));
+            .catch(error => console.log(error));
         matchDataArray.push(matchData);
     }
 
