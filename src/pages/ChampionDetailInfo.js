@@ -54,7 +54,6 @@ const ChampionDetailInfo = ({
     useEffect(() => {
         getChampionDetail(); // 챔피언세부정보를 요청하는 함수 실행
         console.log(item, "item")
-        
     }, [])
 
 
@@ -102,17 +101,22 @@ const ChampionDetailInfo = ({
                 <div>
                     {recoItem.map((block, index) => {
                         return (
+                            // 추천아이템정보가 담겨있는 recoItem을 map으로 반복
                             <div key={index} className={styles['recommendedItem-container']}>
                                 <h3 id={styles['item-type']}>{block.type}</h3>
                                 {block.items.map(reco => {
+                                    // 모든아이템 정보가 담겨있는 item에서 item.data의 key값은 각 아이템의 id값을 나타내고 있음.
                                     let itemName = '';
                                     for (let key in item.data) {
+                                        // 추천아이템의 id값인 reco.id와 item.data의 key값을 비교해서 서로 같으면 그 아이템의 이름을 itemName에 저장함.
                                         if (key === reco.id) itemName = item.data[key].name
                                     }
 
                                     return (
                                         <div className={styles['item-container']}>
+                                            {/* 추천아이템 이미지 */}
                                             <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${reco.id}.png`} />
+                                            {/* 추천아이템 이름 */}
                                             <h5>{itemName}</h5>
                                         </div>
                                     )
