@@ -60,7 +60,7 @@ const Match = ({ information, gameList, searchText, leagueList, profileIconID })
                                             if (participant.summonerName.toUpperCase() === (decodeURIComponent(searchText)).toUpperCase()) {
                                                 return (
                                                     <div key={index}>
-                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/${participant.championName}.png`}/>
+                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${participant.championName}.png`}/>
                                                         <h3>{participant.championName}</h3>
                                                     </div>
                                                 )
@@ -77,6 +77,7 @@ const Match = ({ information, gameList, searchText, leagueList, profileIconID })
                                                         {/* KDA */}
                                                         <h3>{participant.kills}/{participant.deaths}/{participant.assists}</h3>
                                                         {/* 평점 */}
+
                                                         {/* participant.deaths가 0인 경우 평점이 제대로 나오지 않는 현상 발생, 삼항연산자로 0인 경우에 Perfect가 나오게 수정*/}
                                                         <p>{((participant.deaths === 0 ? "Perfect" : ((participant.kills + participant.assists) / participant.deaths).toFixed(2)))} 평점</p>
                                                     </div>

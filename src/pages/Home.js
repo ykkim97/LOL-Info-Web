@@ -6,30 +6,32 @@ import Match from '../components/contents/Match';
 const Home = ({ 
     searchText, 
     setSearchText,
+    item,
     information, 
     gameList, 
     leagueList,
     getPlayerInformation,
     getPlayerGames,
-    getPlayerLeague
+    getPlayerLeague,
+    getItemInfomation
 }) => {
     return (
         <>
             <div className={styles['search-container']}>
                 <h1>LOLY.GG</h1>
                 <input 
-                type="text" 
-                className={styles['app-searchBox']}
-                onChange={(e) => {
-                    setSearchText((prev) => {
-                    return prev = encodeURIComponent(e.target.value)
-                    });
-                }} 
+                    type="text" 
+                    className={styles['app-searchBox']}
+                    onChange={(e) => {
+                        setSearchText((prev) => {
+                        return prev = encodeURIComponent(e.target.value)
+                        });
+                    }} 
                 />
                 <button onClick={() => {
-                getPlayerInformation();
-                getPlayerGames();
-                getPlayerLeague();
+                    getPlayerInformation();
+                    getPlayerGames();
+                    getPlayerLeague();
                 }} className={styles['app-searchButton']} >
                 <FcSearch className={styles['app-searchButton-icons']}/>
                 </button>

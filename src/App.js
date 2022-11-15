@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import championData from "./Data/Champions/ChampionData.js";
 import Templete from './components/Templete';
@@ -12,8 +12,17 @@ function App() {
   const [information, setInformation] = useState([]); // 소환사 정보가 들어갈 Array
   const [gameList, setGameList] = useState([]); // 매치정보가 들어갈 Array
   const [leagueList, setLeagueList] = useState([]); // 소환사 리그정보(티어정보)가 들어갈 Array
+  const [item, setItem] = useState([]); // 아이템 정보가 들어갈 Array
 
-  // test
+  // 아이템 정보를 가져오는 함수
+  const getItemInfomation = () => {
+    return axios.get('http://localhost:4000/item')
+      .then(response => {
+        setItem(response.data);
+      })
+      .catch(error => console.log(error));
+  }
+
   // 소환사 정보를 가져오는 함수
   const getPlayerInformation = (e) => {
     axios.get('http://localhost:4000/information', {params : {searchText : searchText}})
@@ -45,6 +54,11 @@ function App() {
   console.log(gameList, "gameList"); // 매치 정보
   console.log(leagueList, "leagueList") // 소환사 리그정보(티어정보)
   console.log(championData, "championData"); // 챔피언데이터가 들어있는 Array
+  console.log(item, "item") // 아이템 정보
+
+  useEffect(() => {
+    getItemInfomation();
+  }, [])
 
   return (
     <Templete>
@@ -57,12 +71,14 @@ function App() {
             <Home 
               searchText={searchText} 
               setSearchText={setSearchText}
+              item={item}
               information={information}
               gameList={gameList}
               leagueList={leagueList}
               getPlayerInformation={getPlayerInformation}
               getPlayerGames={getPlayerGames}
               getPlayerLeague={getPlayerLeague}
+              getItemInfomation={getItemInfomation}
             />
           }
         ></Route>
@@ -82,6 +98,7 @@ function App() {
           element={
             <ChampionDetailInfo
               championData={championData}
+              item={item}
             />
           }
         ></Route>
