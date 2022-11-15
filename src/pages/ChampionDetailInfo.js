@@ -35,7 +35,7 @@ const ChampionDetailInfo = ({
             .then((response) => response.data)
         championDetailArray.push(data)
         championDetailEntries = Object.values(championDetailArray[0].data)
-        console.log(championDetailEntries, "championDetailEntries")
+        // console.log(championDetailEntries, "championDetailEntries")
         
         spellsArray = championDetailEntries[0].spells;
         passiveArray = championDetailEntries[0].passive;
@@ -43,7 +43,7 @@ const ChampionDetailInfo = ({
         recommendedArray = championDetailEntries[0].recommended;
 
         recoSRItemArray = recommendedArray.find(reco => reco.mode === 'CLASSIC')
-        console.log(recoSRItemArray, "recoSRItemArray")
+        // console.log(recoSRItemArray, "recoSRItemArray")
 
         setSkills([...spellsArray]);
         setPassive(passiveArray);
@@ -53,7 +53,7 @@ const ChampionDetailInfo = ({
 
     useEffect(() => {
         getChampionDetail(); // 챔피언세부정보를 요청하는 함수 실행
-        console.log(item, "item")
+        // console.log(item, "item")
     }, [])
 
 
@@ -83,13 +83,13 @@ const ChampionDetailInfo = ({
             <div className={styles['championDetailInfo-skillsContainer']}>
                 <h2 className={styles['skillsContainer-title']}>스킬 정보</h2>
                 {/* 패시브 */}
-                <div>
+                <div className={styles['skillsContainer-descriptionBox']}>
                     <h4>{passive.name} (Passive)</h4>
                     {passive.description}
                 </div>
                 {/* Q, W, E, R 스킬 */}
                 {skills.map((skill, index) => (
-                    <div key={index}>
+                    <div key={index} className={styles['skillsContainer-descriptionBox']}>
                         <h4>{skill.name} ({skillKeys[index]})</h4>
                         {skill.description}
                     </div>
