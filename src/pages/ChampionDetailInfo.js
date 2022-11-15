@@ -8,8 +8,8 @@ const ChampionDetailInfo = ({
     item
 }) => {
     const { id } = useParams();
-    const championArray = Object.values(championData[0].data)
 
+    const championArray = Object.values(championData[0].data)
     let findChampionObject = championArray.find(item => item.key === id);
     // console.log(findChampionObject, "findChampionObject")
 
@@ -25,6 +25,8 @@ const ChampionDetailInfo = ({
     const [skills, setSkills] = useState([]) // 챔피언 스킬 정보
     const [passive, setPassive] = useState({}) // 챔피언 패시브 정보
     const [skins, setSkins] = useState([]); // 챔피언 스킨 정보
+
+    
 
     // 챔피언세부정보를 요청하는 함수
     const getChampionDetail = async () => {
