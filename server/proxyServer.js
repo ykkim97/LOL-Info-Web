@@ -48,6 +48,8 @@ const getPlayerID = (playerName) => {
         .catch(error => console.log(error));
 }
 
+// GET item (아이템 정보 가져오기)
+// localhost:4000/item
 app.get('/item', async (req, res) => {
     const infomation = await getItemInfomation();
     res.json(infomation);

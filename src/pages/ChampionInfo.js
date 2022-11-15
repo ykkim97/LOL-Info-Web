@@ -32,7 +32,6 @@ const ChampionInfo = (
                         </div>
                     )})}
             </div>
-            
         </>
     )
 }
