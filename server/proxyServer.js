@@ -12,7 +12,7 @@ const API_KEY = "RGAPI-20068cde-fcd1-4bf1-9bbe-b80293de50dc";
 
 // 아이템 정보를 가져오는 함수
 const getItemInfomation = () => {
-    return axios.get(`https://ddragon.leagueoflegends.com/cdn/12.12.1/data/ko_KR/item.json`)
+    return axios.get(`https://ddragon.leagueoflegends.com/cdn/10.24.1/data/ko_KR/item.json`)
         .then(response => {
             return response.data;
         })

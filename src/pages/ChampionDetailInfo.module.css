@@ -34,6 +34,10 @@
     width: 50%;
 }
 
+.championDetailInfo-skillsContainer {
+    margin-left: 10px;
+}
+
 .stats-contents {
     list-style: none;
     display: flex;
@@ -46,4 +50,34 @@
 .stats-contents div {
     width: 100%;
     padding: 5px;
+}
+
+.skillsContainer-title {
+    font-style: italic;
+}
+
+.recommendedItem-title {
+    margin-left: 10px;
+    font-style: italic;
+}
+
+
+.recommendedItem-container {
+    
+}
+
+#item-type {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.item-container {
+    border: 1px solid rgb(38, 66, 143);
+    display: inline-block;
+    text-align: center;
+    padding: 30px;
+    width: 80px;
+    height: 100px;
+    margin: 10px;
+    vertical-align: middle;
 }

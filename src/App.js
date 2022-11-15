@@ -12,7 +12,7 @@ function App() {
   const [information, setInformation] = useState([]); // 소환사 정보가 들어갈 Array
   const [gameList, setGameList] = useState([]); // 매치정보가 들어갈 Array
   const [leagueList, setLeagueList] = useState([]); // 소환사 리그정보(티어정보)가 들어갈 Array
-  const [item, setItem] = useState([]); // 아이템 정보가 들어갈 Array
+  const [item, setItem] = useState([]); // 아이템 정보
 
   // 아이템 정보를 가져오는 함수
   const getItemInfomation = () => {
@@ -50,11 +50,11 @@ function App() {
       .catch((error) => console.log(error));
   }
 
-  console.log(information, "information"); // 소환사 정보
-  console.log(gameList, "gameList"); // 매치 정보
-  console.log(leagueList, "leagueList") // 소환사 리그정보(티어정보)
-  console.log(championData, "championData"); // 챔피언데이터가 들어있는 Array
-  console.log(item, "item") // 아이템 정보
+  // console.log(information, "information"); // 소환사 정보
+  // console.log(gameList, "gameList"); // 매치 정보
+  // console.log(leagueList, "leagueList") // 소환사 리그정보(티어정보)
+  // console.log(championData, "championData"); // 챔피언데이터가 들어있는 Array
+  // console.log(item, "item") // 아이템 정보
 
   useEffect(() => {
     getItemInfomation();
@@ -93,6 +93,7 @@ function App() {
           }>
         </Route>
 
+        {/* Route => /championInfo/:id */}
         <Route
           path='/championInfo/:id'
           element={
