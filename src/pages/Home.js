@@ -36,7 +36,9 @@ const Home = ({
                 <FcSearch className={styles['app-searchButton-icons']}/>
                 </button>
             </div>
-            <Match information={information} gameList={gameList} searchText={searchText} leagueList={leagueList} />
+            <div className={styles['empty-container']}>
+                <Match information={information} gameList={gameList} searchText={searchText} leagueList={leagueList} />
+            </div>
         </>
     )
 }

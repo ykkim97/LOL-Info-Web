@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 
 // API key
-const API_KEY = "RGAPI-20068cde-fcd1-4bf1-9bbe-b80293de50dc";
+const API_KEY = "RGAPI-6b04bb01-a58a-433e-95b9-19aaac20292b";
 
 // 아이템 정보를 가져오는 함수
 const getItemInfomation = () => {
@@ -66,7 +66,7 @@ app.get('/information', async (req, res) => {
     res.json(information); 
 })
 
-// GET past5Games (과거 5게임 가져오기)
+// GET past5Games (과거 15게임 가져오기)
 // localhost:4000/past5Games
 app.get('/past5Games', async (req, res) => {
     const playerName = req.query.searchText; // params를 query로 받아옴(검색기능)
@@ -84,7 +84,7 @@ app.get('/past5Games', async (req, res) => {
     // loop through game IDs
     // at each loop, get the infomation based off ID
     const matchDataArray = [];
-    for (let i = 0; i < gameIDs?.length - 15; i++) {
+    for (let i = 0; i < gameIDs?.length - 5; i++) {
         const matchID = gameIDs[i];
         const matchData = await axios.get(`https://asia.api.riotgames.com/lol/match/v5/matches/${matchID}?api_key=${API_KEY}`)
             .then(response => response.data)
