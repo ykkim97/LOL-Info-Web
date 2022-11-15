@@ -77,8 +77,9 @@ const Match = ({ information, gameList, searchText, leagueList, profileIconID })
                                                         {/* KDA */}
                                                         <h3>{participant.kills}/{participant.deaths}/{participant.assists}</h3>
                                                         {/* 평점 */}
-                                                        {/* participant.deaths가 0인 경우 평점이 제대로 나오지 않는 현상 발생, 삼항연산자로 0인 경우를 따로 지정*/}
-                                                        <p>{((participant.kills + participant.assists)/(participant.deaths === 0 ? 1 : participant.deaths)).toFixed(2)} 평점</p>
+
+                                                        {/* participant.deaths가 0인 경우 평점이 제대로 나오지 않는 현상 발생, 삼항연산자로 0인 경우에 Perfect가 나오게 수정*/}
+                                                        <p>{((participant.deaths === 0 ? "Perfect" : ((participant.kills + participant.assists) / participant.deaths).toFixed(2)))} 평점</p>
                                                     </div>
                                                 )
                                             }
