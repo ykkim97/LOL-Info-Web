@@ -105,81 +105,49 @@ const Match = ({ information, gameList, searchText, leagueList, profileIconID })
                                         <div className={styles['gameData-team1']}>
                                             <p className={styles['gameData-teamtitle']}>Team 1</p>
                                             <ul>
-                                                <li>
-                                                    <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[0].championName}.png`}
-                                                        className={styles['gameData-championMiniFaceImg']}
-                                                    />
-                                                    {gameData.info.participants[0].summonerName}
-                                                </li>
-                                                <li>
-                                                    <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[1].championName}.png`}
-                                                        className={styles['gameData-championMiniFaceImg']}
-                                                    />
-                                                    {gameData.info.participants[1].summonerName}
-                                                </li>
-                                                <li>
-                                                    <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[2].championName}.png`}
-                                                        className={styles['gameData-championMiniFaceImg']}
-                                                    />
-                                                    {gameData.info.participants[2].summonerName}
-                                                </li>
-                                                <li>
-                                                    <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[3].championName}.png`}
-                                                        className={styles['gameData-championMiniFaceImg']}
-                                                    />
-                                                    {gameData.info.participants[3].summonerName}
-                                                </li>
-                                                <li>
-                                                    <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[4].championName}.png`}
-                                                        className={styles['gameData-championMiniFaceImg']}
-                                                    />
-                                                    {gameData.info.participants[4].summonerName}
-                                                </li>
+                                                {/* 반복되는 코드가 많아 map을 사용 */}
+                                                {gameData.info.participants.map((participant, index) => {
+                                                    if (index < 5) {
+                                                        return (
+                                                            <li>
+                                                                <img 
+                                                                    src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[index].championName}.png`}
+                                                                    className={styles['gameData-championMiniFaceImg']}
+                                                                />
+                                                                <div className={styles['gameData-usersInfoBox']}>
+                                                                    {/* 유저 닉네임 */}
+                                                                    <div>{gameData.info.participants[index].summonerName}</div>
+                                                                    {/* 각 유저들의 KDA */}
+                                                                    <div>{gameData.info.participants[index].kills}/{gameData.info.participants[index].deaths}/{gameData.info.participants[index].assists} </div>
+                                                                </div>
+                                                            </li>
+                                                        )
+                                                    }
+                                                })}
                                             </ul>
                                         </div>
                                         <div className={styles['gameData-team2']}>
                                             <p className={styles['gameData-teamtitle']}>Team 2</p>
                                             <ul>
-                                                <li>
-                                                    <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[5].championName}.png`}
-                                                        className={styles['gameData-championMiniFaceImg']}
-                                                    />
-                                                    {gameData.info.participants[5].summonerName}
-                                                </li>
-                                                <li>
-                                                    <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[6].championName}.png`}
-                                                        className={styles['gameData-championMiniFaceImg']}
-                                                    />
-                                                    {gameData.info.participants[6].summonerName}
-                                                </li>
-                                                <li>
-                                                    <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[7].championName}.png`}
-                                                        className={styles['gameData-championMiniFaceImg']}
-                                                    />
-                                                    {gameData.info.participants[7].summonerName}
-                                                </li>
-                                                <li>
-                                                    <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[8].championName}.png`}
-                                                        className={styles['gameData-championMiniFaceImg']}
-                                                    />
-                                                    {gameData.info.participants[8].summonerName}
-                                                </li>
-                                                <li>
-                                                    <img 
-                                                        src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[9].championName}.png`}
-                                                        className={styles['gameData-championMiniFaceImg']}
-                                                    />
-                                                    {gameData.info.participants[9].summonerName}
-                                                </li>
+                                                {/* 반복되는 코드가 많아 map을 사용 */}
+                                                {gameData.info.participants.map((participant, index) => {
+                                                    if (index >= 5 && index < 10) {
+                                                        return (
+                                                            <li>
+                                                                <img 
+                                                                    src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[index].championName}.png`}
+                                                                    className={styles['gameData-championMiniFaceImg']}
+                                                                />
+                                                                <div className={styles['gameData-usersInfoBox']}>
+                                                                    {/* 유저 닉네임 */}
+                                                                    <div>{gameData.info.participants[index].summonerName}</div>
+                                                                    {/* 각 유저들의 KDA */}
+                                                                    <div>{gameData.info.participants[index].kills}/{gameData.info.participants[index].deaths}/{gameData.info.participants[index].assists} </div>
+                                                                </div>
+                                                            </li>
+                                                        )
+                                                    }
+                                                })}
                                             </ul>
                                         </div>
                                     </div>
