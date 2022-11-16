@@ -104,7 +104,7 @@ const ChampionDetailInfo = ({
                             // 추천아이템정보가 담겨있는 recoItem을 map으로 반복
                             <div key={index} className={styles['recommendedItem-container']}>
                                 <h3 id={styles['item-type']}>{block.type}</h3>
-                                {block.items.map(reco => {
+                                {block.items.map((reco, i) => {
                                     // 모든아이템 정보가 담겨있는 item에서 item.data의 key값은 각 아이템의 id값을 나타내고 있음.
                                     let itemName = '';
                                     for (let key in item.data) {
@@ -113,7 +113,7 @@ const ChampionDetailInfo = ({
                                     }
 
                                     return (
-                                        <div className={styles['item-container']}>
+                                        <div className={styles['item-container']} key={i}>
                                             {/* 추천아이템 이미지 */}
                                             <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${reco.id}.png`} />
                                             {/* 추천아이템 이름 */}

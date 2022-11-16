@@ -41,8 +41,8 @@
     list-style: none;
     display: flex;
     width: 500px;
-    border: 1px solid black;
-    margin: 2px auto;
+    box-shadow: 1px 2px 2px 1px rgb(138, 189, 236);
+    margin: 5px auto;
     justify-content: center;
     background: rgb(255, 255, 255);
 }
@@ -87,10 +87,3 @@
     vertical-align: middle;
 }
 
-/* 
-3, 매치기록의 10명의 소환사의 KDA 옆에 나타내기
-4. 챔피언 룬정보 (있으면)
-5. 챔피언 추천스펠 (있으면)
-6. 챔피언 스킬 이미지 매핑
-7. 챔피언상세정보의 챔피언 스탯 스타일조정
- */
