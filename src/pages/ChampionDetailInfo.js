@@ -35,7 +35,7 @@ const ChampionDetailInfo = ({
             .then((response) => response.data)
         championDetailArray.push(data)
         championDetailEntries = Object.values(championDetailArray[0].data)
-        // console.log(championDetailEntries, "championDetailEntries")
+        console.log(championDetailEntries, "championDetailEntries")
         
         spellsArray = championDetailEntries[0].spells;
         passiveArray = championDetailEntries[0].passive;
@@ -98,7 +98,7 @@ const ChampionDetailInfo = ({
 
             <div>
                 <h2 className={styles['recommendedItem-title']}>추천 아이템</h2>
-                <div>
+                <div className={styles['recommendedItem-box']}>
                     {recoItem.map((block, index) => {
                         return (
                             // 추천아이템정보가 담겨있는 recoItem을 map으로 반복

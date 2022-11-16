@@ -183,14 +183,12 @@ const Match = ({ information, gameList, searchText, leagueList, profileIconID })
                                             </ul>
                                         </div>
                                     </div>
-    
+
                                 </div>
+                                
                             ))
                         }
-                    </> :
-                    <>
-                        <h3 className={styles["gameData-title"]}>검색결과없음</h3>
-                    </>
+                    </> : null
                 )
             }
             

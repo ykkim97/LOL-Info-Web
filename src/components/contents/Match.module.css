@@ -7,7 +7,6 @@
     margin: auto;
     width: 90%;
     height: 200px;
-    /* background 속성 삭제 */
     background: rgb(170, 248, 155);
     border: 3px solid rgb(149, 153, 153);
     border-radius: 10px;
