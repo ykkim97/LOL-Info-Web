@@ -24,7 +24,7 @@ const Home = ({
                     className={styles['app-searchBox']}
                     onChange={(e) => {
                         setSearchText((prev) => {
-                        return prev = encodeURIComponent(e.target.value)
+                            return prev = encodeURIComponent(e.target.value)
                         });
                     }} 
                 />
@@ -33,9 +33,10 @@ const Home = ({
                     getPlayerGames();
                     getPlayerLeague();
                 }} className={styles['app-searchButton']} >
-                <FcSearch className={styles['app-searchButton-icons']}/>
+                    <FcSearch className={styles['app-searchButton-icons']}/>
                 </button>
             </div>
+            
             <div className={styles['empty-container']}>
                 <Match information={information} gameList={gameList} searchText={searchText} leagueList={leagueList} />
             </div>

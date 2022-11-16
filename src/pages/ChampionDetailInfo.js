@@ -43,7 +43,7 @@ const ChampionDetailInfo = ({
         recommendedArray = championDetailEntries[0].recommended;
 
         recoSRItemArray = recommendedArray.find(reco => reco.mode === 'CLASSIC')
-        console.log(recoSRItemArray, "recoSRItemArray")
+        // console.log(recoSRItemArray, "recoSRItemArray")
 
         setSkills([...spellsArray]);
         setPassive(passiveArray);
@@ -53,7 +53,7 @@ const ChampionDetailInfo = ({
 
     useEffect(() => {
         getChampionDetail(); // 챔피언세부정보를 요청하는 함수 실행
-        console.log(item, "item")
+        // console.log(item, "item")
     }, [])
 
 
@@ -83,13 +83,13 @@ const ChampionDetailInfo = ({
             <div className={styles['championDetailInfo-skillsContainer']}>
                 <h2 className={styles['skillsContainer-title']}>스킬 정보</h2>
                 {/* 패시브 */}
-                <div>
+                <div className={styles['skillsContainer-descriptionBox']}>
                     <h4>{passive.name} (Passive)</h4>
                     {passive.description}
                 </div>
                 {/* Q, W, E, R 스킬 */}
                 {skills.map((skill, index) => (
-                    <div key={index}>
+                    <div key={index} className={styles['skillsContainer-descriptionBox']}>
                         <h4>{skill.name} ({skillKeys[index]})</h4>
                         {skill.description}
                     </div>
@@ -98,13 +98,13 @@ const ChampionDetailInfo = ({
 
             <div>
                 <h2 className={styles['recommendedItem-title']}>추천 아이템</h2>
-                <div>
+                <div className={styles['recommendedItem-box']}>
                     {recoItem.map((block, index) => {
                         return (
                             // 추천아이템정보가 담겨있는 recoItem을 map으로 반복
                             <div key={index} className={styles['recommendedItem-container']}>
                                 <h3 id={styles['item-type']}>{block.type}</h3>
-                                {block.items.map(reco => {
+                                {block.items.map((reco, i) => {
                                     // 모든아이템 정보가 담겨있는 item에서 item.data의 key값은 각 아이템의 id값을 나타내고 있음.
                                     let itemName = '';
                                     for (let key in item.data) {
@@ -113,7 +113,7 @@ const ChampionDetailInfo = ({
                                     }
 
                                     return (
-                                        <div className={styles['item-container']}>
+                                        <div className={styles['item-container']} key={i}>
                                             {/* 추천아이템 이미지 */}
                                             <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${reco.id}.png`} />
                                             {/* 추천아이템 이름 */}
