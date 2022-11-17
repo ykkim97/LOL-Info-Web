@@ -3,7 +3,7 @@ import styles from "./Match.module.css";
 import SummonerProfile from "./SummonerProfile";
 
 // 매치기록 컴포넌트
-const Match = ({ information, gameList, searchText, leagueList, profileIconID }) => {
+const Match = ({ playerInformation, gameList, searchText, leagueList, profileIconID }) => {
     // 소환사가 속한 팀의 teamId들을 저장할 summonerTeamIdsOfGamelist 배열 생성
     // 소환사가 속한 팀의 전체 킬 수들을 저장할 killsOfGamelist 배열 생성
     // 소환사가 속한 팀의 승리 여부들을 저장할 summonerTeamIsWin 배열 생성
@@ -42,7 +42,7 @@ const Match = ({ information, gameList, searchText, leagueList, profileIconID })
                     <>
                         <h3 className={styles["gameData-title"]}>검색결과</h3>
                         <SummonerProfile 
-                            information={information}
+                            playerInformation={playerInformation}
                             gameList={gameList} 
                             searchText={searchText} 
                             leagueList={leagueList} 

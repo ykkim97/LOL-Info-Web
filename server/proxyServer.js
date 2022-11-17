@@ -1,14 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
-const { response } = require('express');
 
 const app = express();
 
 app.use(cors());
 
 // API key
-const API_KEY = "RGAPI-6ac9c631-c0cb-4109-9882-6a4d2d4433ae";
+const API_KEY = "RGAPI-2f005a94-91f8-40fc-870e-b8cd0ebdcbe2";
 
 // 아이템 정보를 가져오는 함수
 const getItemInfomation = () => {
@@ -55,20 +54,19 @@ app.get('/item', async (req, res) => {
     res.json(infomation);
 })
 
-// GET information (소환사 정보 가져오기)
-// localhost:4000/information
-app.get('/information', async (req, res) => {
+// GET playerInformation (소환사 정보 가져오기)
+// localhost:4000/playerInformation
+app.get('/playerInformation', async (req, res) => {
     const playerName = req.query.searchText;
 
     // information (소환사 정보 얻어오기)
     const information = await getPlayerInformation(playerName);
-
     res.json(information); 
 })
 
-// GET past5Games (과거 15게임 가져오기)
-// localhost:4000/past5Games
-app.get('/past5Games', async (req, res) => {
+// GET past10Games (과거 10게임 가져오기)
+// localhost:4000/past10Games
+app.get('/past10Games', async (req, res) => {
     const playerName = req.query.searchText; // params를 query로 받아옴(검색기능)
 
     // PUUID (puuid 값 얻어오기)
