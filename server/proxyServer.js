@@ -8,7 +8,7 @@ const app = express();
 app.use(cors());
 
 // API key
-const API_KEY = "RGAPI-6ac9c631-c0cb-4109-9882-6a4d2d4433ae";
+const API_KEY = "RGAPI-2f005a94-91f8-40fc-870e-b8cd0ebdcbe2";
 
 // 아이템 정보를 가져오는 함수
 const getItemInfomation = () => {
