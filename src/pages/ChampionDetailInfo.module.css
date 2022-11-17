@@ -59,8 +59,20 @@
 
 .skillsContainer-descriptionBox {
     background: rgb(238, 237, 237);
-    padding : 1px 20px 10px 20px;
     margin: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.skillsContainer-img {
+    width: 64px;
+    height: 64px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.skillsContainer-description {
+    padding-bottom: 15px;
 }
 
 .recommendedItem-title {

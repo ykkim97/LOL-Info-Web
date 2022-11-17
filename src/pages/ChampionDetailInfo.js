@@ -84,14 +84,30 @@ const ChampionDetailInfo = ({
                 <h2 className={styles['skillsContainer-title']}>스킬 정보</h2>
                 {/* 패시브 */}
                 <div className={styles['skillsContainer-descriptionBox']}>
-                    <h4>{passive.name} (Passive)</h4>
-                    {passive.description}
+                    {/* 패시브 이미지 - passive.image.full값을 이용하여 이미지를 불러옴, 일부데이터는 없는 경우가 있을 수 있음. */}
+                    <img 
+                        src={`http://ddragon.leagueoflegends.com/cdn/12.21.1/img/passive/${passive.image?.full}`} 
+                        className={styles['skillsContainer-img']}
+                    />
+                    {/* 패시브 이름과 설명 */}
+                    <div className={styles['skillsContainer-description']}>
+                        <h4>{passive.name} (Passive)</h4>
+                        {passive.description}
+                    </div>
                 </div>
                 {/* Q, W, E, R 스킬 */}
                 {skills.map((skill, index) => (
                     <div key={index} className={styles['skillsContainer-descriptionBox']}>
-                        <h4>{skill.name} ({skillKeys[index]})</h4>
-                        {skill.description}
+                        {/* 스킬 이미지 - skill.id값을 이용하여 이미지를 불러옴, 일부데이터는 없는 경우가 있을 수 있음. */}
+                        <img 
+                            src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/spell/${skill.id}.png`} 
+                            className={styles['skillsContainer-img']}
+                        />
+                        {/* 스킬 이름과 설명 */}
+                        <div className={styles['skillsContainer-description']}>
+                            <h4>{skill.name} ({skillKeys[index]})</h4>
+                            {skill.description}
+                        </div>
                     </div>
                 ))}
             </div>
@@ -122,7 +138,6 @@ const ChampionDetailInfo = ({
                                     )
                                 })}
                             </div>
-                            
                         )
                     })}
                 </div>
