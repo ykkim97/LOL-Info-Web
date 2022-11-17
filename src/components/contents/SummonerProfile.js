@@ -11,7 +11,7 @@ import Emblem_Grandmaster from "./../../Data/Emblems/Emblem_Grandmaster.png"
 import Emblem_Challenger from "./../../Data/Emblems/Emblem_Challenger.png"
 
 // 소환사 프로필 컴포넌트
-const SummonerProfile = ({ information, gameList, searchText, leagueList }) => {
+const SummonerProfile = ({ playerInformation, gameList, searchText, leagueList }) => {
     const emblemImgs = [{key : "IRON", Emblem : Emblem_Iron}, {key : "BRONZE", Emblem : Emblem_Bronze}, 
         {key : "SILVER", Emblem : Emblem_Silver}, {key : "GOLD", Emblem : Emblem_Gold},
         {key : "PLATINUM", Emblem : Emblem_Platinum}, {key : "DIAMOND", Emblem : Emblem_Diamond},
@@ -23,12 +23,12 @@ const SummonerProfile = ({ information, gameList, searchText, leagueList }) => {
             <div className={styles['summonerProfile-container']}>
                 <div className={styles['summonerProfile-profile']}>
                     <img 
-                        src={`http://ddragon.leagueoflegends.com/cdn/12.21.1/img/profileicon/${information.profileIconId}.png`} 
+                        src={`http://ddragon.leagueoflegends.com/cdn/12.21.1/img/profileicon/${playerInformation.profileIconId}.png`} 
                         id={styles["summonerProfileIcon"]}
                     />
                     <div className={styles['summonerProfile-profile-userInfo']}>
-                        <h3 id={styles["summonerName"]}>{information.name}</h3>
-                        <h4 id={styles["summonerLevel"]}>Level {information.summonerLevel}</h4>
+                        <h3 id={styles["summonerName"]}>{playerInformation.name}</h3>
+                        <h4 id={styles["summonerLevel"]}>Level {playerInformation.summonerLevel}</h4>
                     </div>
 
                 </div>

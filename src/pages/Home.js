@@ -7,7 +7,7 @@ const Home = ({
     searchText, 
     setSearchText,
     item,
-    information, 
+    playerInformation, 
     gameList, 
     leagueList,
     getPlayerInformation,
@@ -38,7 +38,7 @@ const Home = ({
             </div>
             
             <div className={styles['empty-container']}>
-                <Match information={information} gameList={gameList} searchText={searchText} leagueList={leagueList} />
+                <Match playerInformation={playerInformation} gameList={gameList} searchText={searchText} leagueList={leagueList} />
             </div>
         </>
     )

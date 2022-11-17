@@ -1,22 +1,22 @@
 import { useEffect, useState } from 'react';
+import { Routes, Route } from "react-router-dom";
 import axios from 'axios';
 import championData from "./Data/Champions/ChampionData.js";
 import Templete from './components/Templete';
-import { Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import ChampionInfo from './pages/ChampionInfo';
 import ChampionDetailInfo from './pages/ChampionDetailInfo.js';
 
 function App() {
   const [searchText, setSearchText] = useState(''); // 검색문자열
-  const [information, setInformation] = useState([]); // 소환사 정보가 들어갈 Array
+  const [playerInformation, setPlayerInformation] = useState([]); // 소환사 정보가 들어갈 Array
   const [gameList, setGameList] = useState([]); // 매치정보가 들어갈 Array
   const [leagueList, setLeagueList] = useState([]); // 소환사 리그정보(티어정보)가 들어갈 Array
   const [item, setItem] = useState([]); // 아이템 정보
 
     // 아이템 정보를 가져오는 함수
     const getItemInfomation = () => {
-        return axios.get('http://localhost:4000/item')
+        axios.get('http://localhost:4000/item')
         .then(response => {
             setItem(response.data);
         })
@@ -24,17 +24,17 @@ function App() {
     }
 
     // 소환사 정보를 가져오는 함수
-    const getPlayerInformation = (e) => {
-        axios.get('http://localhost:4000/information', {params : {searchText : searchText}})
+    const getPlayerInformation = () => {
+        axios.get('http://localhost:4000/playerInformation', {params : {searchText : searchText}})
         .then((response) => {
-            setInformation(response.data);
+            setPlayerInformation(response.data);
         })
         .catch((error) => console.log(error));
     }
 
     // 매치정보를 가져오는 함수
-    const getPlayerGames = (e) => {
-        axios.get('http://localhost:4000/past5Games', {params : {searchText : searchText}}) // params 추가(검색기능)
+    const getPlayerGames = () => {
+        axios.get('http://localhost:4000/past10Games', {params : {searchText : searchText}}) // params 추가(검색기능)
         .then((response) => {
             setGameList(response.data);
         })
@@ -42,7 +42,7 @@ function App() {
     }
 
   // 소환사 리그정보를 가져오는 함수
-    const getPlayerLeague = (e) => {
+    const getPlayerLeague = () => {
         axios.get('http://localhost:4000/tier', {params : {searchText : searchText}})
         .then((response) => {
             setLeagueList(response.data);
@@ -63,7 +63,6 @@ function App() {
     return (
         <Templete>
             <Routes>
-
                 {/* Route => / */}
                 <Route 
                     path='/' 
@@ -72,7 +71,7 @@ function App() {
                             searchText={searchText} 
                             setSearchText={setSearchText}
                             item={item}
-                            information={information}
+                            playerInformation={playerInformation}
                             gameList={gameList}
                             leagueList={leagueList}
                             getPlayerInformation={getPlayerInformation}
@@ -88,7 +87,7 @@ function App() {
                     path='/championInfo' 
                     element={
                         <ChampionInfo 
-                        championData={championData}
+                            championData={championData}
                         />
                     }>
                 </Route>
@@ -98,12 +97,11 @@ function App() {
                     path='/championInfo/:id'
                     element={
                         <ChampionDetailInfo
-                        championData={championData}
-                        item={item}
+                            championData={championData}
+                            item={item}
                         />
                     }
                 ></Route>
-
             </Routes>
         </Templete>
     );
