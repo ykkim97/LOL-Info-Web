@@ -11,7 +11,8 @@
     border: 3px solid rgb(149, 153, 153);
     border-radius: 10px;
     display: flex;
-    margin-bottom: 5vh;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
 }
 
 .gameData-lose-container {
@@ -85,9 +86,64 @@
     margin-right: 5px;
 }
 
-
 .gameData-usersInfoBox {
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.gameData-detail-win-container,
+.gameData-detail-lose-container {
+    margin: auto;
+    width: 90%;
+    height: 200px;
+    background: rgb(170, 248, 155);
+    border: 3px solid rgb(149, 153, 153);
+}
+
+.gameData-detail-lose-container {
+    background: rgb(255, 166, 166);
+}
+
+.detail-list {
+    height: 37px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    border: 2px solid rgb(149, 153, 153);
+}
+
+.participant-img {
+    display: flex;
+    margin-right: 10px;
+    width: 50px;
+    height: 25px;
+}
+
+.participant-name {
+    width: 150px;
+}
+
+.participant-kda,
+.participant-total-wards-placed,
+.participant-total-minions-killed {
+    width: 150px;
+    text-align: center;
+}
+
+.participant-total-damage-champions {
+    width: 200px;
+    text-align: center;
+}
+
+.participant-item {
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 25px;
+}
+
+.participant-item img {
+    width: 25px;
+    height: 25px;
 }
