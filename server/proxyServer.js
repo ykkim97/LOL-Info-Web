@@ -31,7 +31,6 @@ const getPlayerInformation = (playerName) => {
 const getPlayerPUUID = (playerName) => {
     return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}?api_key=${API_KEY}`)
         .then(response => {
-            console.log(response.data, " => 소환사정보");
             console.log(playerName)
             return response.data.puuid;
         })
