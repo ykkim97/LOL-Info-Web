@@ -35,8 +35,3 @@
 .app-searchButton:hover {
     background-color: rgb(226, 221, 221);
 }
-
-.empty-container {
-    max-height: 100vh;
-    overflow-y: auto;
-}

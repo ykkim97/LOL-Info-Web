@@ -9,16 +9,16 @@ const ChampionDetailInfo = ({
 }) => {
     const { id } = useParams();
 
+    // 모든 챔피언의 정보가 들어있는 배열을 championArray에 저장
     const championArray = Object.values(championData[0].data)
-    let findChampionObject = championArray.find(item => item.key === id);
-    // console.log(findChampionObject, "findChampionObject")
+    // championArray에서 useParams로 부터 얻은 id값과 챔피언의 key값이 같은 Object를 찾기
+    let findChampionObject = championArray.find(champ => champ.key === id); 
 
     const statsArray = Object.entries(findChampionObject.stats);
     const championDetailArray = []
     let championDetailEntries = []
     let spellsArray = []
     let passiveArray = []
-    let skinArray = []
     let recommendedArray = []
     let recoSRItemArray = []
 
@@ -26,40 +26,38 @@ const ChampionDetailInfo = ({
 
     const [skills, setSkills] = useState([]) // 챔피언 스킬 정보
     const [passive, setPassive] = useState({}) // 챔피언 패시브 정보
-    const [skins, setSkins] = useState([]); // 챔피언 스킨 정보
     const [recoItem, setRecoItem] = useState([]); // 추천 아이템 정보
 
     // 챔피언세부정보를 요청하는 함수
     const getChampionDetail = async () => {
+        // 해당 url으로 ajax요청하여 가공한 후 championDetailEntries에 저장
         const data = await axios.get(`https://ddragon.leagueoflegends.com/cdn/10.24.1/data/ko_KR/champion/${findChampionObject.id}.json`)
             .then((response) => response.data)
         championDetailArray.push(data)
         championDetailEntries = Object.values(championDetailArray[0].data)
-        console.log(championDetailEntries, "championDetailEntries")
         
+        // championDetailEntries로 부터 스펠, 패시브, 추천아이템 정보를 추출
         spellsArray = championDetailEntries[0].spells;
         passiveArray = championDetailEntries[0].passive;
-        skinArray = championDetailEntries[0].skins;
         recommendedArray = championDetailEntries[0].recommended;
 
+        // mode값이 'CLASSIC'인 것을 찾아서 recoSRItemArray에 저장(일반 5X5게임 기준 추천아이템을 구현하기 위해)
         recoSRItemArray = recommendedArray.find(reco => reco.mode === 'CLASSIC')
-        // console.log(recoSRItemArray, "recoSRItemArray")
 
+        // 각 state를 그에 맞게 변경
         setSkills([...spellsArray]);
         setPassive(passiveArray);
-        setSkins([...skinArray]);
         setRecoItem(recoSRItemArray.blocks);
     }
 
     useEffect(() => {
         getChampionDetail(); // 챔피언세부정보를 요청하는 함수 실행
-        // console.log(item, "item")
     }, [])
-
 
     return (
         <>
             <div className={styles['championDetailInfo-profileContainer']}>
+                {/* 챔피언명과 챔피언컨셉 및 설명을 표시하는 부분 */}
                 <div className={styles['championDetailInfo-profile']}>
                     <img 
                         src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${findChampionObject.id}.png`} 
@@ -69,7 +67,7 @@ const ChampionDetailInfo = ({
                     <h3 id={styles['champion-title']}>{findChampionObject.title}</h3>
                     <div id={styles['champion-blurb']}>{findChampionObject.blurb}</div>
                 </div>
-            
+                {/* 챔피언의 기본 스탯을 표시하는 부분 */}
                 <div className={styles['championDetailInfo-stats']}>
                     {statsArray.map((stat, index) => (
                         <div key={index} className={styles['stats-contents']}>

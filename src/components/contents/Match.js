@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Match.module.css";
+import MatchDetail from "./MatchDetail";
 import SummonerProfile from "./SummonerProfile";
+import { FaArrowDown } from "react-icons/fa";
 
 // 매치기록 컴포넌트
 const Match = ({ playerInformation, gameList, searchText, leagueList }) => {
-    // 소환사가 속한 팀의 teamId들을 저장할 summonerTeamIdsOfGamelist 배열 생성
-    // 소환사가 속한 팀의 전체 킬 수들을 저장할 killsOfGamelist 배열 생성
-    // 소환사가 속한 팀의 승리 여부들을 저장할 summonerTeamIsWin 배열 생성
-    const summonerTeamIdsOfGamelist = [];
-    const killsOfGamelist = [];
-    const summonerTeamIsWin = [];
-    const visibleArr = [];
-    const [visible, setVisible] = useState([...visibleArr]);
+    const summonerTeamIdsOfGamelist = []; // 소환사가 속한 팀의 teamId들을 저장할 summonerTeamIdsOfGamelist 배열 생성
+    const killsOfGamelist = []; // 소환사가 속한 팀의 전체 킬 수들을 저장할 killsOfGamelist 배열 생성
+    const summonerTeamIsWin = []; // 소환사가 속한 팀의 승리 여부들을 저장할 summonerTeamIsWin 배열 생성
+    const visibleArr = []; // visible state를 초기화 및 변경하기 위해 사용하는 배열 생성
+    
+    const [visible, setVisible] = useState([...visibleArr]); // 매치상세기록이 열려있는지 판단하기위한 state
 
     gameList.map((gameData, index) => {
         visibleArr.push(false)
@@ -33,9 +33,9 @@ const Match = ({ playerInformation, gameList, searchText, leagueList }) => {
         })
     })
     
+    // visible : [false, false, false, false, false, false, false, false, false, false]
     useEffect(() => {
         setVisible([...visibleArr])
-        console.log(visible)
     }, [])
 
     return (
@@ -114,7 +114,7 @@ const Match = ({ playerInformation, gameList, searchText, leagueList }) => {
                                                     {gameData.info.participants.map((participant, index) => {
                                                         if (index < 5) {
                                                             return (
-                                                                <li>
+                                                                <li key={index}>
                                                                     <img 
                                                                         src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[index].championName}.png`}
                                                                         className={styles['gameData-championMiniFaceImg']}
@@ -138,7 +138,7 @@ const Match = ({ playerInformation, gameList, searchText, leagueList }) => {
                                                     {gameData.info.participants.map((participant, index) => {
                                                         if (index >= 5 && index < 10) {
                                                             return (
-                                                                <li>
+                                                                <li key={index}>
                                                                     <img 
                                                                         src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[index].championName}.png`}
                                                                         className={styles['gameData-championMiniFaceImg']}
@@ -160,80 +160,21 @@ const Match = ({ playerInformation, gameList, searchText, leagueList }) => {
                                             <button onClick={() => {
                                                 visibleArr[index] = !visibleArr[index];
                                                 setVisible([...visibleArr])
-                                                console.log(visibleArr, "visibleArr")
-                                                console.log(visible, "visible")
-                                            }}>
-                                                누르기
+                                            }} className={styles['match-detail-button']} >
+                                                <FaArrowDown />
                                             </button>
                                             
                                         </div>
                                     </div>
-                                    {visible[index] !== true ? 
-                                        <div></div> : 
-                                            <div>
-                                                <div className={styles[`gameData-detail-win-container`]}>
-                                                    {gameData.info.participants.map((participant, index) => {
-                                                        console.log(gameData.info.participants)
-                                                        if (participant.win === true) {
-                                                            return (
-                                                                <div className={styles[`detail-list`]}>
-                                                                    <div className={styles[`participant-img`]}>
-                                                                        <img 
-                                                                            src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[index].championName}.png`}
-                                                                            className={styles['gameData-championMiniFaceImg']}
-                                                                        />
-                                                                    </div>
-                                                                    
-                                                                    <div className={styles[`participant-name`]}>{gameData.info.participants[index].summonerName}</div>
-                                                                    <div className={styles[`participant-kda`]}>{gameData.info.participants[index].kills}/{gameData.info.participants[index].deaths}/{gameData.info.participants[index].assists}</div>
-                                                                    <div className={styles[`participant-total-damage-champions`]}>챔피언 딜량 : {gameData.info.participants[index].totalDamageDealtToChampions}</div>
-                                                                    <div className={styles[`participant-total-minions-killed`]}>cs : {gameData.info.participants[index].totalMinionsKilled + gameData.info.participants[index].neutralMinionsKilled}</div>
-                                                                    <div className={styles[`participant-total-wards-placed`]}>와드 설치 : {gameData.info.participants[index].wardsPlaced}</div>
-                                                                    <div className={styles[`participant-item`]}>
-                                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${gameData.info.participants[index].item0}.png`} oneerror="aa" />
-                                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${gameData.info.participants[index].item1}.png`} />
-                                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${gameData.info.participants[index].item2}.png`} />
-                                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${gameData.info.participants[index].item3}.png`} />
-                                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${gameData.info.participants[index].item4}.png`} />
-                                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${gameData.info.participants[index].item5}.png`} />
-                                                                    </div>
-                                                                </div>
-                                                            )
-                                                        }
-                                                    })}
-                                                </div>
-                                                <div className={styles[`gameData-detail-lose-container`]}>
-                                                    {gameData.info.participants.map((participant, index) => {
-                                                        if (participant.win === false) {
-                                                            return (
-                                                                <div className={styles[`detail-list`]}>
-                                                                    <div className={styles[`participant-img`]}>
-                                                                        <img 
-                                                                            src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[index].championName}.png`}
-                                                                            className={styles['gameData-championMiniFaceImg']}
-                                                                        />
-                                                                    </div>
-                                                                    
-                                                                    <div className={styles[`participant-name`]}>{gameData.info.participants[index].summonerName}</div>
-                                                                    <div className={styles[`participant-kda`]}>{gameData.info.participants[index].kills}/{gameData.info.participants[index].deaths}/{gameData.info.participants[index].assists}</div>
-                                                                    <div className={styles[`participant-total-damage-champions`]}>챔피언 딜량 : {gameData.info.participants[index].totalDamageDealtToChampions}</div>
-                                                                    <div className={styles[`participant-total-minions-killed`]}>cs : {gameData.info.participants[index].totalMinionsKilled + gameData.info.participants[index].neutralMinionsKilled}</div>
-                                                                    <div className={styles[`participant-total-wards-placed`]}>와드 설치 : {gameData.info.participants[index].wardsPlaced}</div>
-                                                                    <div className={styles[`participant-item`]}>
-                                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${gameData.info.participants[index].item0}.png`} />
-                                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${gameData.info.participants[index].item1}.png`} />
-                                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${gameData.info.participants[index].item2}.png`} />
-                                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${gameData.info.participants[index].item3}.png`} />
-                                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${gameData.info.participants[index].item4}.png`} />
-                                                                        <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${gameData.info.participants[index].item5}.png`} />
-                                                                    </div>
-                                                                </div>
-                                                            )
-                                                        }
-                                                    })}
-                                                </div>
-                                                
-                                            </div>
+                                    
+                                    {visible[index] !== true ? // 해당 인덱스가 true일 경우에 상세기록컴포넌트를 보여준다.
+                                        <div></div> :   
+                                        <div>
+                                            {/* 매치상세기록 컴포넌트 */}
+                                            <MatchDetail 
+                                                gameData={gameData}
+                                            />
+                                        </div>
                                     }
                                 </div>
                             ))
