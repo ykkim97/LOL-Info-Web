@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./ChampionInfo.module.css"
 
@@ -8,7 +7,6 @@ const ChampionInfo = (
 ) => {
     
     const values = Object.values(championData.championData[0])
-    const championNameArray = Object.keys(values[3]) // 챔피언명만 담긴 배열
     const championObjectArray = Object.values(values[3]) // 챔피언정보가 담긴 객체들의 배열
 
     const navigate = useNavigate();
@@ -30,7 +28,8 @@ const ChampionInfo = (
                             />
                             <div>{championObjectArray[index].name}</div>
                         </div>
-                    )})}
+                    )})
+                }
             </div>
         </>
     )

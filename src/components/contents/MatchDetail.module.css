@@ -1,0 +1,53 @@
+.gameData-detail-win-container,
+.gameData-detail-lose-container {
+    margin: auto;
+    width: 90%;
+    background: rgb(170, 248, 155);
+}
+
+.gameData-detail-lose-container {
+    background: rgb(255, 166, 166);
+}
+
+.detail-list {
+    height: 37px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(149, 153, 153);
+}
+
+.participant-img {
+    display: flex;
+    margin-right: 10px;
+    width: 50px;
+    height: 25px;
+}
+
+.participant-name {
+    width: 150px;
+}
+
+.participant-kda,
+.participant-total-wards-placed,
+.participant-total-minions-killed {
+    width: 150px;
+    text-align: center;
+}
+
+.participant-total-damage-champions {
+    width: 200px;
+    text-align: center;
+}
+
+.participant-item {
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 25px;
+}
+
+.participant-item img {
+    width: 25px;
+    height: 25px;
+}
