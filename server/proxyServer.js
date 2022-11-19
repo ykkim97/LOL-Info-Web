@@ -18,6 +18,7 @@ const getItemInfomation = () => {
         .catch(error => console.log(error))
 }
 
+
 // 소환사 정보를 가져오는 함수
 const getPlayerInformation = (playerName) => {
     return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}?api_key=${API_KEY}`)
