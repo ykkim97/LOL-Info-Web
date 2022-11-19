@@ -12,7 +12,7 @@
     margin-top: 7px;
     width: 33%;
     height: 240px;
-    border: 1px solid black;
+    box-shadow: 4px 4px 6px 2px grey;
     padding: 10px;
     float: left;
     text-align: right;
@@ -29,7 +29,8 @@
 #summonerProfileIcon {
     width: 150px;
     height: 150px;
-    margin-top: 35px;
+    margin-top: 10px;
+    margin-left: 20px;
     margin-right: 35px;
 }
 
@@ -41,36 +42,54 @@
     font-size: 20px;
 }
 
-.summonerProfile-lankInfo {
+.summonerProfile-rankInfo {
     display: flex;
     width: 60%;
-    height: 80%;
+    height: 254px;
     float: right;
-    border: 1px solid black;
-    margin-top: 20px;
+    box-shadow: 4px 4px 6px 2px grey;
+    margin-top: 10px;
     margin-right: 20px;
     padding: 2px;
     font-size: 10px;
+    font-weight: 500;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 }
 
-.summonerProfile-soloLank {
-    border: 1px dotted rgb(165, 165, 165);
-    width: 40%;
-    font-size: 15px;
-    list-style: none;
+.summonerProfile-unRanked {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(100, 97, 97);
+    padding-bottom: 10px;
 }
 
-.summonerProfile-freeLank {
-    border: 1px dotted rgb(165, 165, 165);
-    width: 40%;
+.summonerProfile-soloRank {
+    width: 50%;
     font-size: 15px;
     list-style: none;
+    margin: 0px;
+    padding: 3px;
+}
+
+.summonerProfile-soloRank li {
+    text-align: center;
+}
+
+.summonerProfile-freeRank {
+    width: 50%;
+    font-size: 15px;
+    list-style: none;
+    margin: 0px;
+    padding: 3px;
+}
+
+.summonerProfile-freeRank li {
+    text-align: center;
 }
 
 .emblemImg {
-    width: 70px;
-    height: 70px;
+    width: 140px;
+    height: 140px;
     text-align: center;
 }

@@ -2,18 +2,21 @@
     text-align: center;
 }
 
-.gameData-container {
+.gameData-win-container,
+.gameData-lose-container {
     margin: auto;
     width: 90%;
     height: 200px;
-    background: linear-gradient(to bottom, #edf1f1, #f1f5f5);
+    background: rgb(170, 248, 155);
     border: 3px solid rgb(149, 153, 153);
-    border-bottom: 6px solid rgb(149, 153, 153);
-    border-right: 4px solid rgb(149, 153, 153);
-    border-left: 4px solid rgb(149, 153, 153);
     border-radius: 10px;
     display: flex;
-    margin-bottom: 5vh;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+}
+
+.gameData-lose-container {
+    background: rgb(255, 166, 166);
 }
 
 .gameData-gamemode {
@@ -81,4 +84,15 @@
 .gameData-championMiniFaceImg {
     width: 25px;
     margin-right: 5px;
+}
+
+.gameData-usersInfoBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.match-detail-button {
+    display: inline-block;
+    vertical-align: middle;
 }
