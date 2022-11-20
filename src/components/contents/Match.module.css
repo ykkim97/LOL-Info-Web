@@ -93,6 +93,8 @@
 }
 
 .match-detail-button {
-    display: inline-block;
-    vertical-align: middle;
+    height: 100%;
+    background-color: rgb(233, 210, 148);
+    border: none;
+    cursor: pointer;
 }
