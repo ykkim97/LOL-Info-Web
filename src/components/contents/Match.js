@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Match.module.css";
-import MatchDetail from "./MatchDetail";
+import MatchDetail from "./MatchDetail.js";
 import SummonerProfile from "./SummonerProfile";
 import { FaArrowDown } from "react-icons/fa";
 

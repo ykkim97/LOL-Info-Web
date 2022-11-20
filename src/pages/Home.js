@@ -43,7 +43,7 @@ const Home = ({
             </div>
             
             {/* 매치기록 */}
-            <div>
+            <div className={styles['match-record']}>
                 <Match 
                     playerInformation={playerInformation} 
                     gameList={gameList} 
