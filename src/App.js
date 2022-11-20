@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import ChampionInfo from './pages/ChampionInfo';
 import ChampionDetailInfo from './pages/ChampionDetailInfo.js';
 
+// App
 function App() {
   const [searchText, setSearchText] = useState(''); // 검색문자열
   const [playerInformation, setPlayerInformation] = useState([]); // 소환사 정보가 들어갈 Array

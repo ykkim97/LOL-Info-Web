@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styles from "./ChampionDetailInfo.module.css";
 
+// 챔피언상세정보 컴포넌트
 const ChampionDetailInfo = ({
     championData,
     item
