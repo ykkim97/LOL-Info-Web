@@ -6,6 +6,7 @@ import Templete from './components/Templete';
 import Home from './pages/Home';
 import ChampionInfo from './pages/ChampionInfo';
 import ChampionDetailInfo from './pages/ChampionDetailInfo.js';
+import NoImage from "./Data/Etc/NoImage.jpg";
 
 // App
 function App() {
@@ -51,6 +52,11 @@ function App() {
         .catch((error) => console.log(error));
     }
 
+    // 이미지 에러 시 처리를 위한 함수
+    const onErrorImg = (e) => {
+        e.target.src = NoImage;
+    }
+
     useEffect(() => {
         getItemInfomation();
     }, [])
@@ -73,6 +79,7 @@ function App() {
                             getPlayerGames={getPlayerGames}
                             getPlayerLeague={getPlayerLeague}
                             getItemInfomation={getItemInfomation}
+                            onErrorImg={onErrorImg}
                         />
                     }
                 ></Route>
@@ -83,6 +90,7 @@ function App() {
                     element={
                         <ChampionInfo 
                             championData={championData}
+                            onErrorImg={onErrorImg}
                         />
                     }>
                 </Route>
@@ -94,6 +102,7 @@ function App() {
                         <ChampionDetailInfo
                             championData={championData}
                             item={item}
+                            onErrorImg={onErrorImg}
                         />
                     }
                 ></Route>

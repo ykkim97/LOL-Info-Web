@@ -6,7 +6,8 @@ import styles from "./ChampionDetailInfo.module.css";
 // 챔피언상세정보 컴포넌트
 const ChampionDetailInfo = ({
     championData,
-    item
+    item,
+    onErrorImg,
 }) => {
     const { id } = useParams();
 
@@ -63,6 +64,7 @@ const ChampionDetailInfo = ({
                     <img 
                         src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${findChampionObject.id}.png`} 
                         id={styles['championDetailInfo-img']}
+                        onError={onErrorImg}
                     />
                     <h1 id={styles['champion-name']}>{findChampionObject.name}</h1>
                     <h3 id={styles['champion-title']}>{findChampionObject.title}</h3>
@@ -87,6 +89,7 @@ const ChampionDetailInfo = ({
                     <img 
                         src={`http://ddragon.leagueoflegends.com/cdn/12.21.1/img/passive/${passive.image?.full}`} 
                         className={styles['skillsContainer-img']}
+                        onError={onErrorImg}
                     />
                     {/* 패시브 이름과 설명 */}
                     <div className={styles['skillsContainer-description']}>
@@ -101,6 +104,7 @@ const ChampionDetailInfo = ({
                         <img 
                             src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/spell/${skill.id}.png`} 
                             className={styles['skillsContainer-img']}
+                            onError={onErrorImg}
                         />
                         {/* 스킬 이름과 설명 */}
                         <div className={styles['skillsContainer-description']}>
@@ -130,7 +134,10 @@ const ChampionDetailInfo = ({
                                     return (
                                         <div className={styles['item-container']} key={i}>
                                             {/* 추천아이템 이미지 */}
-                                            <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${reco.id}.png`} />
+                                            <img 
+                                                src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${reco.id}.png`} 
+                                                onError={onErrorImg}
+                                            />
                                             {/* 추천아이템 이름 */}
                                             <h5>{itemName}</h5>
                                         </div>
