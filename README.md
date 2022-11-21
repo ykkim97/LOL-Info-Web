@@ -54,10 +54,10 @@ style="text-align : center">
 
 ## 프로젝트 실행방법
 
-**1. Terminal에서 'cd server'로 server 디렉토리로 이동**
-**2. npm install**
-**3. npm start로 서버 시작**
-**4. 새 Terminal을 열고 npm install 후 React 실행(npm start)**
+**1. Terminal에서 'cd server'로 server 디렉토리로 이동**<br>
+**2. npm install**<br>
+**3. npm start로 서버 시작**<br>
+**4. 새 Terminal을 열고 npm install 후 React 실행(npm start)**<br>
 
 ## 변경사항
 - 
