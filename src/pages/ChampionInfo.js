@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import styles from "./ChampionInfo.module.css"
 
 const ChampionInfo = (
-    championData
+    championData,
+    onErrorImg
 ) => {
     
     const values = Object.values(championData.championData[0])
@@ -25,6 +26,7 @@ const ChampionInfo = (
                             <img 
                                 src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${championObjectArray[index].id}.png`} 
                                 className={styles['championInfo-img']}
+                                onError={onErrorImg}
                             />
                             <div>{championObjectArray[index].name}</div>
                         </div>

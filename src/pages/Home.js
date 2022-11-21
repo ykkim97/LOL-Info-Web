@@ -13,6 +13,7 @@ const Home = ({
     getPlayerInformation,
     getPlayerGames,
     getPlayerLeague,
+    onErrorImg,
 }) => {
 
     // 검색버튼 onClick 함수
@@ -49,6 +50,7 @@ const Home = ({
                     gameList={gameList} 
                     searchText={searchText} 
                     leagueList={leagueList} 
+                    onErrorImg={onErrorImg}
                 />
             </div>
         </>

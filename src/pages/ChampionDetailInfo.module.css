@@ -50,6 +50,7 @@
 .stats-contents div {
     width: 100%;
     padding: 5px;
+    border: 1px solid rgb(138, 189, 236);
 }
 
 .skillsContainer-title {
@@ -62,6 +63,8 @@
     margin: 20px;
     display: flex;
     align-items: center;
+    border: 1px solid rgb(138, 189, 236);
+    box-shadow: 1px 2px 2px 1px rgb(138, 189, 236);
 }
 
 .skillsContainer-img {
@@ -77,6 +80,7 @@
 
 .recommendedItem-title {
     margin-left: 30px;
+    padding-top: 20px;
     font-style: italic;
 }
 

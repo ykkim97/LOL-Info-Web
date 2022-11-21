@@ -5,7 +5,7 @@ import SummonerProfile from "./SummonerProfile";
 import { FaArrowDown } from "react-icons/fa";
 
 // 매치기록 컴포넌트
-const Match = ({ playerInformation, gameList, searchText, leagueList }) => {
+const Match = ({ playerInformation, gameList, searchText, leagueList, onErrorImg }) => {
     const summonerTeamIdsOfGamelist = []; // 소환사가 속한 팀의 teamId들을 저장할 summonerTeamIdsOfGamelist 배열 생성
     const killsOfGamelist = []; // 소환사가 속한 팀의 전체 킬 수들을 저장할 killsOfGamelist 배열 생성
     const summonerTeamIsWin = []; // 소환사가 속한 팀의 승리 여부들을 저장할 summonerTeamIsWin 배열 생성
@@ -65,7 +65,7 @@ const Match = ({ playerInformation, gameList, searchText, leagueList }) => {
                                                 if (participant.summonerName.toUpperCase() === (decodeURIComponent(searchText)).toUpperCase()) {
                                                     return (
                                                         <div key={index}>
-                                                            <img src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${participant.championName}.png`}/>
+                                                            <img src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${participant.championName}.png`} onError={onErrorImg} />
                                                             <h3>{participant.championName}</h3>
                                                         </div>
                                                     )
@@ -118,6 +118,7 @@ const Match = ({ playerInformation, gameList, searchText, leagueList }) => {
                                                                     <img 
                                                                         src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[index].championName}.png`}
                                                                         className={styles['gameData-championMiniFaceImg']}
+                                                                        onError={onErrorImg}
                                                                     />
                                                                     <div className={styles['gameData-usersInfoBox']}>
                                                                         {/* 유저 닉네임 */}
@@ -142,6 +143,7 @@ const Match = ({ playerInformation, gameList, searchText, leagueList }) => {
                                                                     <img 
                                                                         src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[index].championName}.png`}
                                                                         className={styles['gameData-championMiniFaceImg']}
+                                                                        onError={onErrorImg}
                                                                     />
                                                                     <div className={styles['gameData-usersInfoBox']}>
                                                                         {/* 유저 닉네임 */}
@@ -173,6 +175,7 @@ const Match = ({ playerInformation, gameList, searchText, leagueList }) => {
                                             {/* 매치상세기록 컴포넌트 */}
                                             <MatchDetail 
                                                 gameData={gameData}
+                                                onErrorImg={onErrorImg}
                                             />
                                         </div>
                                     }
