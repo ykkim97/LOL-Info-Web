@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./ChampionInfo.module.css"
 
+// 챔피언 정보 컴포넌트
 const ChampionInfo = (
     championData,
     onErrorImg
