@@ -1,3 +1,5 @@
+// 프록시서버
+
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
@@ -7,7 +9,7 @@ const app = express();
 app.use(cors());
 
 // API key
-const API_KEY = "RGAPI-ae95838d-31a1-4db0-a9e6-f97867230c92";
+const API_KEY = 'RGAPI-6908b5e3-6f18-41f8-ae75-ea35f9fc7158';
 
 // 아이템 정보를 가져오는 함수
 const getItemInfomation = () => {
@@ -17,7 +19,6 @@ const getItemInfomation = () => {
         })
         .catch(error => console.log(error))
 }
-
 
 // 소환사 정보를 가져오는 함수
 const getPlayerInformation = (playerName) => {

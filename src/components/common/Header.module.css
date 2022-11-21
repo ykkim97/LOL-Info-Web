@@ -4,6 +4,8 @@
     text-align: center;
     padding-top: 30px;
     font-weight: bold;
+    /* background: linear-gradient(to bottom, #a5dcf1, #93c1f7); */
+    background: #a5dcf1;
 }
 
 .Header-tab {

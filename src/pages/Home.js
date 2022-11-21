@@ -13,6 +13,7 @@ const Home = ({
     getPlayerInformation,
     getPlayerGames,
     getPlayerLeague,
+    onErrorImg,
 }) => {
 
     // 검색버튼 onClick 함수
@@ -43,12 +44,13 @@ const Home = ({
             </div>
             
             {/* 매치기록 */}
-            <div>
+            <div className={styles['match-record']}>
                 <Match 
                     playerInformation={playerInformation} 
                     gameList={gameList} 
                     searchText={searchText} 
                     leagueList={leagueList} 
+                    onErrorImg={onErrorImg}
                 />
             </div>
         </>
