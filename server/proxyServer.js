@@ -3,13 +3,13 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
-
 const app = express();
+require('dotenv').config({ path : '../.env' });
 
 app.use(cors());
 
 // API key
-const API_KEY = 'RGAPI-6908b5e3-6f18-41f8-ae75-ea35f9fc7158';
+const API_KEY = process.env.TEST_KEY;
 
 // 아이템 정보를 가져오는 함수
 const getItemInfomation = () => {
