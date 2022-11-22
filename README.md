@@ -61,6 +61,7 @@ style="text-align : center">
 
 ## 프로젝트 실행방법
 
+
 **1. https://developer.riotgames.com/ 에서 DEVELOPMENT API KEY 발급**
 
 **2. 최상위 경로의 .env에 TEST_KEY=발급받은KEY값 넣기**
