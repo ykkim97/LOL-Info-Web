@@ -20,7 +20,7 @@
 - CSS
 - Javascript
 - React
-- express
+- Express
 
 ## 구현 기능
 **아직 개발이 진행중이고 초기버전이다. 새로운 기능이 추가되면 ReadME도 업데이트될 것이다.** <br>
