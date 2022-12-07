@@ -7,7 +7,8 @@ const Header = () => {
     return <>
         <nav className={styles['Header-container']}>
             <Link to="/" className={styles["Header-tab"]}>전적검색</Link>
-            <Link to="/championInfo" className={styles["Header-tab"]}>챔피언정보</Link>
+            <Link to="/championInfo" className={styles["Header-tab"]}>챔피언</Link>
+            <Link to="/item" className={styles["Header-tab"]}>아이템</Link>
         </nav>
     </>
 }
