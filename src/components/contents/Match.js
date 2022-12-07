@@ -65,7 +65,11 @@ const Match = ({ playerInformation, gameList, searchText, leagueList, onErrorImg
                                                 if (participant.summonerName.toUpperCase() === (decodeURIComponent(searchText)).toUpperCase()) {
                                                     return (
                                                         <div key={index}>
-                                                            <img src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${participant.championName}.png`} onError={onErrorImg} />
+                                                            <img 
+                                                                src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${participant.championName}.png`} 
+                                                                onError={onErrorImg} 
+                                                                alt={participant.championName}
+                                                            />
                                                             <h3>{participant.championName}</h3>
                                                         </div>
                                                     )
@@ -119,6 +123,7 @@ const Match = ({ playerInformation, gameList, searchText, leagueList, onErrorImg
                                                                         src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[index].championName}.png`}
                                                                         className={styles['gameData-championMiniFaceImg']}
                                                                         onError={onErrorImg}
+                                                                        alt={participant.championName}
                                                                     />
                                                                     <div className={styles['gameData-usersInfoBox']}>
                                                                         {/* 유저 닉네임 */}
@@ -144,6 +149,7 @@ const Match = ({ playerInformation, gameList, searchText, leagueList, onErrorImg
                                                                         src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${gameData.info.participants[index].championName}.png`}
                                                                         className={styles['gameData-championMiniFaceImg']}
                                                                         onError={onErrorImg}
+                                                                        alt={participant.championName}
                                                                     />
                                                                     <div className={styles['gameData-usersInfoBox']}>
                                                                         {/* 유저 닉네임 */}

@@ -25,6 +25,7 @@ const SummonerProfile = ({ playerInformation, gameList, searchText, leagueList }
                     <img 
                         src={`http://ddragon.leagueoflegends.com/cdn/12.21.1/img/profileicon/${playerInformation.profileIconId}.png`} 
                         id={styles["summonerProfileIcon"]}
+                        alt={playerInformation.profileIconId}
                     />
                     <div className={styles['summonerProfile-profile-userInfo']}>
                         <h3 id={styles["summonerName"]}>{playerInformation.name}</h3>
@@ -45,7 +46,9 @@ const SummonerProfile = ({ playerInformation, gameList, searchText, leagueList }
                                     {emblemImgs.map((imgList) => {
                                         if(imgList.key == list.tier) {
                                             return (
-                                                <li key={index}><img src={imgList.Emblem} className={styles['emblemImg']}/></li>
+                                                <li key={index}>
+                                                    <img src={imgList.Emblem} className={styles['emblemImg']} alt={imgList.Emblem} />
+                                                </li>
                                             )
                                         }
                                     })}
@@ -67,7 +70,7 @@ const SummonerProfile = ({ playerInformation, gameList, searchText, leagueList }
                                         if(imgList.key == list.tier) {
                                             return (
                                                 <li key={index}>
-                                                    <img src={imgList.Emblem} className={styles['emblemImg']}/>
+                                                    <img src={imgList.Emblem} className={styles['emblemImg']} alt={imgList.Emblem}/>
                                                 </li>
                                             )
                                         }
