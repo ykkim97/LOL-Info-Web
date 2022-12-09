@@ -28,6 +28,7 @@ const ChampionInfo = (
                                 src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${championObjectArray[index].id}.png`} 
                                 className={styles['championInfo-img']}
                                 onError={onErrorImg}
+                                alt={championObjectArray[index].id}
                             />
                             <div>{championObjectArray[index].name}</div>
                         </div>

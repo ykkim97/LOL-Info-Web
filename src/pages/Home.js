@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Home.module.css";
 import { FcSearch } from "react-icons/fc";
 import Match from '../components/contents/Match';
@@ -15,12 +15,18 @@ const Home = ({
     getPlayerLeague,
     onErrorImg,
 }) => {
+    // searchText를 새로 저장하기 위해 nickname을 만듬
+    const [nickname, setNickname] = useState('');
+
 
     // 검색버튼 onClick 함수
     const searchClick = () => {
         getPlayerInformation();
         getPlayerGames();
         getPlayerLeague();
+        // 검색할 닉네임을 타이핑하고 클릭을 누를 경우 최종 검색할 닉네임을 nickname에 저장하도록 한다.
+        // 이후 nickname값을 Match 컴포넌트에 props로 전달한다.
+        setNickname(searchText); 
     }
 
     return (
@@ -35,7 +41,7 @@ const Home = ({
                         setSearchText((prev) => {
                             return prev = encodeURIComponent(e.target.value);
                         });
-                    }} 
+                    }}
                 />
                 {/* 검색버튼 */}
                 <button onClick={searchClick} className={styles['app-searchButton']} >
@@ -48,9 +54,9 @@ const Home = ({
                 <Match 
                     playerInformation={playerInformation} 
                     gameList={gameList} 
-                    searchText={searchText} 
                     leagueList={leagueList} 
                     onErrorImg={onErrorImg}
+                    nickname={nickname}
                 />
             </div>
         </>

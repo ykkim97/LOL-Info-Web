@@ -65,6 +65,7 @@ const ChampionDetailInfo = ({
                         src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${findChampionObject.id}.png`} 
                         id={styles['championDetailInfo-img']}
                         onError={onErrorImg}
+                        alt={findChampionObject.id}
                     />
                     <h1 id={styles['champion-name']}>{findChampionObject.name}</h1>
                     <h3 id={styles['champion-title']}>{findChampionObject.title}</h3>
@@ -90,6 +91,7 @@ const ChampionDetailInfo = ({
                         src={`http://ddragon.leagueoflegends.com/cdn/12.21.1/img/passive/${passive.image?.full}`} 
                         className={styles['skillsContainer-img']}
                         onError={onErrorImg}
+                        alt={passive.image?.full}
                     />
                     {/* 패시브 이름과 설명 */}
                     <div className={styles['skillsContainer-description']}>
@@ -105,6 +107,7 @@ const ChampionDetailInfo = ({
                             src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/spell/${skill.id}.png`} 
                             className={styles['skillsContainer-img']}
                             onError={onErrorImg}
+                            alt={skill.id}
                         />
                         {/* 스킬 이름과 설명 */}
                         <div className={styles['skillsContainer-description']}>
@@ -137,6 +140,7 @@ const ChampionDetailInfo = ({
                                             <img 
                                                 src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${reco.id}.png`} 
                                                 onError={onErrorImg}
+                                                alt={reco.id}
                                             />
                                             {/* 추천아이템 이름 */}
                                             <h5>{itemName}</h5>

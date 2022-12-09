@@ -10,7 +10,7 @@ const MatchDetail = ({ gameData, onErrorImg }) => {
                 // 승리한 팀
                 if (participant.win === true) {
                     return  (
-                        <div className={styles[`gameData-detail-win-container`]}>
+                        <div className={styles[`gameData-detail-win-container`]} key={index}>
                             <div className={styles[`detail-list`]}>
                                 {/* 소환사가 플레이한 챔피언의 이미지 */}
                                 <div className={styles[`participant-img`]}>
@@ -18,6 +18,7 @@ const MatchDetail = ({ gameData, onErrorImg }) => {
                                         src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${participant.championName}.png`}
                                         className={styles['gameData-championMiniFaceImg']}
                                         onError={onErrorImg}
+                                        alt={participant.championName}
                                     />
                                 </div>
                                 {/* 소환사명 */}
@@ -32,12 +33,12 @@ const MatchDetail = ({ gameData, onErrorImg }) => {
                                 <div className={styles[`participant-total-wards-placed`]}>와드 설치 : {participant.wardsPlaced}</div>
                                 {/* 아이템이미지 */}
                                 <div className={styles[`participant-item`]}> 
-                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item0}.png`} onError={onErrorImg} />
-                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item1}.png`} onError={onErrorImg} />
-                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item2}.png`} onError={onErrorImg} />
-                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item3}.png`} onError={onErrorImg} />
-                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item4}.png`} onError={onErrorImg} />
-                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item5}.png`} onError={onErrorImg} />
+                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item0}.png`} onError={onErrorImg} alt={participant.item0} />
+                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item1}.png`} onError={onErrorImg} alt={participant.item1} />
+                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item2}.png`} onError={onErrorImg} alt={participant.item2} />
+                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item3}.png`} onError={onErrorImg} alt={participant.item3} />
+                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item4}.png`} onError={onErrorImg} alt={participant.item4} />
+                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item5}.png`} onError={onErrorImg} alt={participant.item5} />
                                 </div>
                             </div>
                         </div>
@@ -46,7 +47,7 @@ const MatchDetail = ({ gameData, onErrorImg }) => {
                 // 패배한 팀
                 if (participant.win === false) {           
                     return (
-                        <div className={styles[`gameData-detail-lose-container`]}>
+                        <div className={styles[`gameData-detail-lose-container`]} key={index}>
                             <div className={styles[`detail-list`]}>
                                 {/* 소환사가 플레이한 챔피언의 이미지 */}
                                 <div className={styles[`participant-img`]}>
@@ -54,6 +55,7 @@ const MatchDetail = ({ gameData, onErrorImg }) => {
                                         src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${participant.championName}.png`}
                                         className={styles['gameData-championMiniFaceImg']}
                                         onError={onErrorImg}
+                                        alt={participant.championName}
                                     />
                                 </div>
                                 {/* 소환사명 */}
@@ -68,12 +70,12 @@ const MatchDetail = ({ gameData, onErrorImg }) => {
                                 <div className={styles[`participant-total-wards-placed`]}>와드 설치 : {participant.wardsPlaced}</div>
                                 {/* 아이템이미지 */}
                                 <div className={styles[`participant-item`]}> 
-                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item0}.png`} onError={onErrorImg}/>
-                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item1}.png`} onError={onErrorImg}/>
-                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item2}.png`} onError={onErrorImg}/>
-                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item3}.png`} onError={onErrorImg}/>
-                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item4}.png`} onError={onErrorImg}/>
-                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item5}.png`} onError={onErrorImg}/>
+                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item0}.png`} onError={onErrorImg} alt={participant.item0}/>
+                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item1}.png`} onError={onErrorImg} alt={participant.item1}/>
+                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item2}.png`} onError={onErrorImg} alt={participant.item2}/>
+                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item3}.png`} onError={onErrorImg} alt={participant.item3}/>
+                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item4}.png`} onError={onErrorImg} alt={participant.item4}/>
+                                    <img src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${participant.item5}.png`} onError={onErrorImg} alt={participant.item5}/>
                                 </div>
                             </div>
                         </div>

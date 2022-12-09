@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import ChampionInfo from './pages/ChampionInfo';
 import ChampionDetailInfo from './pages/ChampionDetailInfo.js';
 import NoImage from "./Data/Etc/NoImage.jpg";
+import ItemInfo from './pages/ItemInfo.js';
 
 // App
 function App() {
@@ -102,6 +103,16 @@ function App() {
                         <ChampionDetailInfo
                             championData={championData}
                             item={item}
+                            onErrorImg={onErrorImg}
+                        />
+                    }
+                ></Route>
+
+                {/* Route => /item */}
+                <Route
+                    path='/item'
+                    element={
+                        <ItemInfo 
                             onErrorImg={onErrorImg}
                         />
                     }
