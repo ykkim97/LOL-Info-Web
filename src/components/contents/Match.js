@@ -5,7 +5,13 @@ import SummonerProfile from "./SummonerProfile";
 import { FaArrowDown } from "react-icons/fa";
 
 // 매치기록 컴포넌트
-const Match = ({ playerInformation, gameList, searchText, leagueList, onErrorImg }) => {
+const Match = ({ 
+    playerInformation, 
+    gameList, 
+    leagueList, 
+    onErrorImg,
+    nickname,
+}) => {
     const summonerTeamIdsOfGamelist = []; // 소환사가 속한 팀의 teamId들을 저장할 summonerTeamIdsOfGamelist 배열 생성
     const killsOfGamelist = []; // 소환사가 속한 팀의 전체 킬 수들을 저장할 killsOfGamelist 배열 생성
     const summonerTeamIsWin = []; // 소환사가 속한 팀의 승리 여부들을 저장할 summonerTeamIsWin 배열 생성
@@ -17,7 +23,7 @@ const Match = ({ playerInformation, gameList, searchText, leagueList, onErrorImg
         visibleArr.push(false)
         gameData.info.participants.map(participant => {
             // gameData안의 각 participant의 summonrName과 디코딩된 searchText값이 대소문자구분없이 같을 경우 
-            if (participant.summonerName.toUpperCase() === (decodeURIComponent(searchText)).toUpperCase()) {
+            if (participant.summonerName.toUpperCase() === (decodeURIComponent(nickname)).toUpperCase()) {
                 // 검색된 소환사의 teamId를 summonerTeamIdsOfGamelist 배열에 추가 
                 summonerTeamIdsOfGamelist.push(participant.teamId)
             }
@@ -32,15 +38,16 @@ const Match = ({ playerInformation, gameList, searchText, leagueList, onErrorImg
             }
         })
     })
-    
+
     // visible : [false, false, false, false, false, false, false, false, false, false]
     useEffect(() => {
         setVisible([...visibleArr])
     }, [])
+    
 
     return (
         <>
-            {searchText === '' ?
+            {nickname === '' ?
                 <div></div> : 
                 (
                     gameList.length !== 0 ? 
@@ -48,8 +55,6 @@ const Match = ({ playerInformation, gameList, searchText, leagueList, onErrorImg
                         <h3 className={styles["gameData-title"]}>검색결과</h3>
                         <SummonerProfile 
                             playerInformation={playerInformation}
-                            gameList={gameList} 
-                            searchText={searchText} 
                             leagueList={leagueList} 
                         />
                         {
@@ -61,8 +66,8 @@ const Match = ({ playerInformation, gameList, searchText, leagueList, onErrorImg
         
                                         <div className={styles['gameData-champion']}>
                                             {gameData.info.participants.map(participant => {
-                                                // gameData안의 각 participant의 summonrName과 디코딩된 searchText값이 대소문자구분없이 같을 경우 
-                                                if (participant.summonerName.toUpperCase() === (decodeURIComponent(searchText)).toUpperCase()) {
+                                                // gameData안의 각 participant의 summonrName과 디코딩된 nickname값이 대소문자구분없이 같을 경우 
+                                                if (participant.summonerName.toUpperCase() === (decodeURIComponent(nickname)).toUpperCase()) {
                                                     return (
                                                         <div key={index}>
                                                             <img 
@@ -79,8 +84,8 @@ const Match = ({ playerInformation, gameList, searchText, leagueList, onErrorImg
         
                                         <div className={styles['gameData-kda']}>
                                             {gameData.info.participants.map(participant => {
-                                                // gameData안의 각 participant의 summonrName과 디코딩된 searchText값이 대소문자구분없이 같을 경우
-                                                if (participant.summonerName.toUpperCase() === (decodeURIComponent(searchText)).toUpperCase()) {
+                                                // gameData안의 각 participant의 summonrName과 디코딩된 nickname값이 대소문자구분없이 같을 경우
+                                                if (participant.summonerName.toUpperCase() === (decodeURIComponent(nickname)).toUpperCase()) {
                                                     return (
                                                         <div key={index}>
                                                             {/* KDA */}
@@ -98,8 +103,8 @@ const Match = ({ playerInformation, gameList, searchText, leagueList, onErrorImg
                                         <div className={styles['gameData-individual']}>
                                             {/* 킬관여가 NaN으로 표기되는 현상 발생, map의 인자에 participant, index로 되어있는 것을 index를 제거, gameList의 index를 사용하도록 수정 */}
                                             {gameData.info.participants.map((participant) => {
-                                                // gameData안의 각 participant의 summonrName과 디코딩된 searchText값이 대소문자구분없이 같을 경우
-                                                if (participant.summonerName.toUpperCase() === (decodeURIComponent(searchText)).toUpperCase()) {
+                                                // gameData안의 각 participant의 summonrName과 디코딩된 nickname값이 대소문자구분없이 같을 경우
+                                                if (participant.summonerName.toUpperCase() === (decodeURIComponent(nickname)).toUpperCase()) {
                                                     return (
                                                         <div key={index}>
                                                             {/* 소환사의 킬과 어시스트의 합을 소환사가 속한 팀의 전체 킬수로 나누고, 비율을 구함 */}
