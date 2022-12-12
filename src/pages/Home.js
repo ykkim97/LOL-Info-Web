@@ -29,6 +29,13 @@ const Home = ({
         setNickname(searchText); 
     }
 
+    // Enter키로도 검색할 수 있도록 하기위한 함수
+    const onEnterPress = (e) => {
+        if (e.key == 'Enter') {
+            searchClick();
+        }
+    }
+
     return (
         <>
             <div className={styles['search-container']}>
@@ -42,6 +49,7 @@ const Home = ({
                             return prev = encodeURIComponent(e.target.value);
                         });
                     }}
+                    onKeyPress={onEnterPress}
                 />
                 {/* 검색버튼 */}
                 <button onClick={searchClick} className={styles['app-searchButton']} >
