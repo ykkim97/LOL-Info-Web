@@ -16,8 +16,9 @@ const Match = ({
     const killsOfGamelist = []; // 소환사가 속한 팀의 전체 킬 수들을 저장할 killsOfGamelist 배열 생성
     const summonerTeamIsWin = []; // 소환사가 속한 팀의 승리 여부들을 저장할 summonerTeamIsWin 배열 생성
     const visibleArr = []; // visible state를 초기화 및 변경하기 위해 사용하는 배열 생성
-    
+
     const [visible, setVisible] = useState([...visibleArr]); // 매치상세기록이 열려있는지 판단하기위한 state
+    const [open, setOpen] = useState(false);
 
     gameList.map((gameData, index) => {
         visibleArr.push(false)
@@ -171,8 +172,18 @@ const Match = ({
                                         </div>
                                         <div>
                                             <button onClick={() => {
-                                                visibleArr[index] = !visibleArr[index];
-                                                setVisible([...visibleArr])
+                                                // 클릭할 경우 open을 바꿔줌 (true면 false로, false면 true로)
+                                                setOpen(prev => !prev);
+
+                                                // 만약에 open이 true면? 모달창이 열려있다는 뜻
+                                                if (open === true) {
+                                                    visibleArr[index] = true;
+                                                    setVisible([...visibleArr])
+                                                    
+                                                } else {
+                                                    visibleArr[index] = false;
+                                                    setVisible([...visibleArr])
+                                                }
                                             }} className={styles['match-detail-button']} >
                                                 <FaArrowDown />
                                             </button>
@@ -181,7 +192,7 @@ const Match = ({
                                     </div>
                                     
                                     {visible[index] !== true ? // 해당 인덱스가 true일 경우에 상세기록컴포넌트를 보여준다.
-                                        <div></div> :   
+                                        null :   
                                         <div>
                                             {/* 매치상세기록 컴포넌트 */}
                                             <MatchDetail 
