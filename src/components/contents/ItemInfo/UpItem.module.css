@@ -1,0 +1,19 @@
+.UpItem {
+    display: inline-block;
+    margin-right: 16px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    text-align: center;
+    width: 200px;
+    background-color: #eeeded;
+    box-shadow: 0 0 5px 1px rgb(66 152 173);
+    cursor: pointer;
+}
+
+#UpItem-img {
+    width: 100px;
+}
+
+#UpItem-itemName {
+    font-size: 16px;
+}

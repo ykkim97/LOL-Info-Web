@@ -8,6 +8,7 @@ import ChampionInfo from './pages/ChampionInfo';
 import ChampionDetailInfo from './pages/ChampionDetailInfo.js';
 import NoImage from "./Data/Etc/NoImage.jpg";
 import ItemInfo from './pages/ItemInfo.js';
+import ItemDetailInfo from './pages/ItemDetailInfo.js';
 
 // App
 function App() {
@@ -113,6 +114,17 @@ function App() {
                     path='/item'
                     element={
                         <ItemInfo 
+                            onErrorImg={onErrorImg}
+                        />
+                    }
+                ></Route>
+
+                {/* Route => /item/:id */}
+                <Route
+                    path='/item/:id'
+                    element={
+                        <ItemDetailInfo 
+                            item={item}
                             onErrorImg={onErrorImg}
                         />
                     }
