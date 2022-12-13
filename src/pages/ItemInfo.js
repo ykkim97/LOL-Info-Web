@@ -1,32 +1,50 @@
 import React, { useEffect, useState } from "react";
 import styles from "./ItemInfo.module.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const ItemInfo = ({ 
     onErrorImg 
 }) => {
     const [itemArray, setItemArray] = useState([]);
+    const [itemObject, setItemObject] = useState({});
+    const navigate = useNavigate();
 
     // 아이템 정보를 가져오는 함수
     const getItemInfomation = () => {
         axios.get('http://localhost:4000/item')
-        .then(response => {
-            setItemArray(Object.values(response.data.data));
-        })
-        .catch(error => console.log(error));
+            .then(response => {
+                return response.data.data
+            })
+            .then(result => {
+                setItemObject(result)
+                setItemArray(Object.values(result))
+                // console.log(itemArray, "ItemArray")
+                // console.log(itemObject, "ItemObject")
+            })
+            .catch(error => console.log(error));
     }
 
     useEffect(() => {
         getItemInfomation();
-        console.log(itemArray)
     }, [])
 
     return (
         <>
             <h3 className={styles['ItemInfo-title']}>아이템</h3>
             <div className={styles['ItemInfo-container']}>
-                {itemArray.map(it => (
-                    <div className={styles['ItemInfo-item']}>
+                {itemArray.map((it, index) => (
+                    <div className={styles['ItemInfo-item']}
+                        onClick={() => {
+                            let param;
+                            for (let key in itemObject) {
+                                if (it.image.full.includes(key)) {
+                                    param = key;
+                                }
+                            }
+                            navigate(`/item/${param}`)
+                        }}
+                    >
                         <img 
                             src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${it.image.full}`} 
                             onError={onErrorImg} 
@@ -34,7 +52,6 @@ const ItemInfo = ({
                             className={styles['item-img']}
                         />
                         <h4>{it.name}</h4>
-                        {/* TODO: 아이템 상세컴포넌트 개발 후 링크 연결하기 */}
                     </div>
                 ))}
             </div>
