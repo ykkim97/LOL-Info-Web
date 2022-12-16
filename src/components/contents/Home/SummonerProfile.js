@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import styles from "./SummonerProfile.module.css";
-import Emblem_Iron from "./../../Data/Emblems/Emblem_Iron.png"
-import Emblem_Bronze from "./../../Data/Emblems/Emblem_Bronze.png"
-import Emblem_Silver from "./../../Data/Emblems/Emblem_Silver.png"
-import Emblem_Gold from "./../../Data/Emblems/Emblem_Gold.png"
-import Emblem_Platinum from "./../../Data/Emblems/Emblem_Platinum.png"
-import Emblem_Diamond from "./../../Data/Emblems/Emblem_Diamond.png"
-import Emblem_Master from "./../../Data/Emblems/Emblem_Master.png"
-import Emblem_Grandmaster from "./../../Data/Emblems/Emblem_Grandmaster.png"
-import Emblem_Challenger from "./../../Data/Emblems/Emblem_Challenger.png"
+import Emblem_Iron from "./../../../Data/Emblems/Emblem_Iron.png"
+import Emblem_Bronze from "./../../../Data/Emblems/Emblem_Bronze.png"
+import Emblem_Silver from "./../../../Data/Emblems/Emblem_Silver.png"
+import Emblem_Gold from "./../../../Data/Emblems/Emblem_Gold.png"
+import Emblem_Platinum from "./../../../Data/Emblems/Emblem_Platinum.png"
+import Emblem_Diamond from "./../../../Data/Emblems/Emblem_Diamond.png"
+import Emblem_Master from "./../../../Data/Emblems/Emblem_Master.png"
+import Emblem_Grandmaster from "./../../../Data/Emblems/Emblem_Grandmaster.png"
+import Emblem_Challenger from "./../../../Data/Emblems/Emblem_Challenger.png"
 
 // 소환사 프로필 컴포넌트
 const SummonerProfile = ({ playerInformation, leagueList }) => {

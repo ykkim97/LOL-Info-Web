@@ -3,6 +3,7 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const { response } = require('express');
 const app = express();
 require('dotenv').config({ path : '../.env' });
 
@@ -44,6 +45,14 @@ const getPlayerID = (playerName) => {
     return axios.get(`https://kr.api.riotgames.com/lol/summoner/v4/summoners/by-name/${playerName}?api_key=${API_KEY}`)
         .then(response => {
             return response.data.id;
+        })
+        .catch(error => console.log(error));
+}
+
+const getRotationChampion = () => {
+    return axios.get(`https://kr.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=${API_KEY}`)
+        .then(response => {
+            return response.data;
         })
         .catch(error => console.log(error));
 }
@@ -111,6 +120,11 @@ app.get('/tier', async (req, res) => {
     leagueDataArray.push(leagueData);
 
     res.json(leagueDataArray)
+})
+
+app.get('/rotation', async (req, res) => {
+    const rotation = await getRotationChampion();
+    res.json(rotation);
 })
 
 // port 4000

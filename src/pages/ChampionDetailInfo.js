@@ -17,13 +17,13 @@ const ChampionDetailInfo = ({
     let findChampionObject = championArray.find(champ => champ.key === id); 
 
     const statsArray = Object.entries(findChampionObject.stats);
-    const championDetailArray = []
-    let championDetailEntries = []
-    let spellsArray = []
-    let passiveArray = []
-    let recommendedArray = []
-    let recoSRItemArray = []
-
+    const championDetailArray = [];
+    let championDetailEntries = [];
+    let spellsArray = [];
+    let passiveArray = [];
+    let recommendedArray = [];
+    let recoSRItemArray = [];
+    
     const skillKeys = ['Q','W','E','R']; // 스킬 단축키
 
     const [skills, setSkills] = useState([]) // 챔피언 스킬 정보

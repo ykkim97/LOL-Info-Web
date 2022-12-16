@@ -45,7 +45,7 @@ function App() {
         .catch((error) => console.log(error));
     }
 
-  // 소환사 리그정보를 가져오는 함수
+    // 소환사 리그정보를 가져오는 함수
     const getPlayerLeague = () => {
         axios.get('http://localhost:4000/tier', {params : {searchText : searchText}})
         .then((response) => {
