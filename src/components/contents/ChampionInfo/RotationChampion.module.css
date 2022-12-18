@@ -1,0 +1,16 @@
+.rotation-title {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.rotation-Container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.rotation-championImg {
+    width: 70px;
+    padding: 5px;
+}
+
