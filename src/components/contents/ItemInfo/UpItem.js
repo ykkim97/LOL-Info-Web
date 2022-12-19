@@ -7,7 +7,7 @@ const UpItem = ({ findItemObject, itemObject, onErrorImg }) => {
 
     return (
         <>
-            <h3>상위 아이템</h3>
+            <h3 className={styles['item-desc']}>상위 아이템</h3>
             {findItemObject.into?.map((id, index) => (
                 <div 
                     className={styles['UpItem']}

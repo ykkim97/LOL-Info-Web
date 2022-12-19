@@ -15,8 +15,6 @@ const ItemDetailInfo = ({
     // image.full에 id가 포함되어 있는 것을 찾는다.
     let findItemObject = itemArray.find(item => item.image.full.includes(id));
 
-    console.log(findItemObject);
-
     return (
         <div className={styles['itemDetailInfo-Container']}>
             <section className={styles['itemDetail-headerInfo']}>
@@ -33,10 +31,10 @@ const ItemDetailInfo = ({
                         itemObject={itemObject}
                         findItemObject={findItemObject}
                     /> : (
-                        <>
-                            <h3>하위 아이템</h3>
-                            <p>최하위 아이템 입니다.</p>
-                        </>
+                        <div>
+                            <h3 className={styles['item-desc']}>하위 아이템</h3>
+                            <p className={styles['item-desc']}>최하위 아이템 입니다.</p>
+                        </div>
                     )
                 }
                 {findItemObject.hasOwnProperty('into') ?
@@ -45,10 +43,10 @@ const ItemDetailInfo = ({
                         itemObject={itemObject}
                         findItemObject={findItemObject}
                     /> : (
-                        <>
-                            <h3>상위 아이템</h3>
-                            <p>최상위 아이템 입니다.</p>
-                        </>
+                        <div>
+                            <h3 className={styles['item-desc']}>상위 아이템</h3>
+                            <p className={styles['item-desc']}>최상위 아이템 입니다.</p>
+                        </div>
                     )
                 }
             </section>

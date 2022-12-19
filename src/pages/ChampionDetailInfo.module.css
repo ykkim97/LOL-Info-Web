@@ -3,6 +3,8 @@
     width: 100%;
     display: flex;
     padding-top: 30px;
+    background: linear-gradient(to right, #21232b, #3687e4 , #21232b);
+    color: #ffffff;
 }
 
 .championDetailInfo-profile {
@@ -33,10 +35,6 @@
     width: 50%;
 }
 
-.championDetailInfo-skillsContainer {
-    margin-left: 10px;
-}
-
 .stats-contents {
     list-style: none;
     display: flex;
@@ -44,7 +42,7 @@
     box-shadow: 1px 2px 2px 1px rgb(138, 189, 236);
     margin: 5px auto;
     justify-content: center;
-    background: rgb(255, 255, 255);
+    background-color: #21232b;
 }
 
 .stats-contents div {
@@ -53,9 +51,17 @@
     border: 1px solid rgb(138, 189, 236);
 }
 
+.championDetailInfo-skillsContainer {
+    background: linear-gradient(to right, #21232b, #3687e4 , #21232b);
+    margin: 0;
+    padding-bottom: 10px;
+}
+
 .skillsContainer-title {
     font-style: italic;
+    margin: 0;
     margin-left: 30px;
+    color: #ffffff;
 }
 
 .skillsContainer-descriptionBox {
@@ -65,6 +71,7 @@
     align-items: center;
     border: 1px solid rgb(138, 189, 236);
     box-shadow: 1px 2px 2px 1px rgb(138, 189, 236);
+    background: linear-gradient(to right, #c3c5ce, #dce8f7, #c3c5ce);
 }
 
 .skillsContainer-img {
@@ -78,15 +85,22 @@
     padding-bottom: 15px;
 }
 
+.recommendedItem-AllContainer {
+    background: linear-gradient(to right, #21232b, #3687e4 , #21232b);
+}
+
 .recommendedItem-title {
+    margin: 0;
     margin-left: 30px;
     padding-top: 20px;
     font-style: italic;
+    color: #ffffff;
 }
 
 #item-type {
     font-size: 20px;
     margin-left: 30px;
+    color: #ffffff;
 }
 
 .recommendedItem-box {
@@ -98,7 +112,7 @@
 .item-container {
     border: 1px solid rgb(138, 189, 236);
     box-shadow: 1px 2px 2px 1px rgb(138, 189, 236);
-    background: rgb(238, 237, 237);
+    background: linear-gradient(to right, #c3c5ce, #b4d1f3, #c3c5ce);
     display: inline-block;
     text-align: center;
     padding: 30px;

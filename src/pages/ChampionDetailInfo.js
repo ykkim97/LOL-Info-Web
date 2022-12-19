@@ -17,13 +17,13 @@ const ChampionDetailInfo = ({
     let findChampionObject = championArray.find(champ => champ.key === id); 
 
     const statsArray = Object.entries(findChampionObject.stats);
-    const championDetailArray = []
-    let championDetailEntries = []
-    let spellsArray = []
-    let passiveArray = []
-    let recommendedArray = []
-    let recoSRItemArray = []
-
+    const championDetailArray = [];
+    let championDetailEntries = [];
+    let spellsArray = [];
+    let passiveArray = [];
+    let recommendedArray = [];
+    let recoSRItemArray = [];
+    
     const skillKeys = ['Q','W','E','R']; // 스킬 단축키
 
     const [skills, setSkills] = useState([]) // 챔피언 스킬 정보
@@ -118,7 +118,7 @@ const ChampionDetailInfo = ({
                 ))}
             </div>
 
-            <div>
+            <div className={styles['recommendedItem-AllContainer']}>
                 <h2 className={styles['recommendedItem-title']}>추천 아이템</h2>
                 <div className={styles['recommendedItem-box']}>
                     {recoItem.map((block, index) => {
