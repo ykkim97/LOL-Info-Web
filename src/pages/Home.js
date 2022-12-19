@@ -50,6 +50,7 @@ const Home = ({
                         });
                     }}
                     onKeyPress={onEnterPress}
+                    spellCheck="false"
                 />
                 {/* 검색버튼 */}
                 <button onClick={searchClick} className={styles['app-searchButton']} >

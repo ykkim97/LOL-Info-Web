@@ -118,7 +118,7 @@ const ChampionDetailInfo = ({
                 ))}
             </div>
 
-            <div>
+            <div className={styles['recommendedItem-AllContainer']}>
                 <h2 className={styles['recommendedItem-title']}>추천 아이템</h2>
                 <div className={styles['recommendedItem-box']}>
                     {recoItem.map((block, index) => {

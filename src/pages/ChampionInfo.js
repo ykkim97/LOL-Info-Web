@@ -2,8 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import RotationChampions from "../components/contents/ChampionInfo/RotationChampions";
-import styles from "./ChampionInfo.module.css"
-import useDidMountEffect from "../useDidMountEffect";
+import styles from "./ChampionInfo.module.css";
 
 // 챔피언 정보 컴포넌트
 const ChampionInfo = (
@@ -37,7 +36,7 @@ const ChampionInfo = (
                             <img 
                                 src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${championObjectArray[index].id}.png`} 
                                 className={styles['championInfo-img']}
-                                onError={onErrorImg}
+                                onError={() => onErrorImg()}
                                 alt={championObjectArray[index].id}
                             />
                             <div>{championObjectArray[index].name}</div>

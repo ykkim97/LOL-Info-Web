@@ -1,5 +1,6 @@
 .summonerProfile-container {
-    background: linear-gradient(to bottom, #edf1f1, #f1f5f5);
+    /* background: linear-gradient(to bottom, #edf1f1, #f1f5f5); */
+    background: linear-gradient(to right, #c3c5ce, #c7def7, #c3c5ce);
     width: 90%;
     height: 280px;
     margin: 20px auto;

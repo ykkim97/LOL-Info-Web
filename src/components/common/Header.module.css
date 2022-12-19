@@ -4,25 +4,26 @@
     text-align: center;
     padding-top: 30px;
     font-weight: bold;
-    /* background: linear-gradient(to bottom, #a5dcf1, #93c1f7); */
-    background: #a5dcf1;
+    /* background: linear-gradient(to bottom, #a5dcf1, #93c1f7);
+    background: #a5dcf1; */
+    background-color: #21232b;
 }
 
 .Header-tab {
     font-size: 20px;
     padding: 20px;
     text-decoration: none;
-    color: black;
+    color: #ffffff;
 }
 
 .Header-tab:link {
-    color: black;
+    color: #ffffff;
 }
 
 .Header-tab:visited {
-    color: black;
+    color: #ffffff;
 }
 
 .Header-tab:hover {
-    color: gray;
+    color: #6fc9ec;
 }
