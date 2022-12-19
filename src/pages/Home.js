@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Home.module.css";
 import { FcSearch } from "react-icons/fc";
 import Match from '../components/contents/Home/Match';
@@ -15,9 +15,8 @@ const Home = ({
     getPlayerLeague,
     onErrorImg,
 }) => {
-    // searchText를 새로 저장하기 위해 nickname을 만듬
-    const [nickname, setNickname] = useState('');
-
+    const searchInputRef = useRef(); // 검색창에 focus를 주기위해 useRef()를 사용하여 searchInputRef에 담기
+    const [nickname, setNickname] = useState(''); // searchText를 새로 저장하기 위해 nickname을 만듬
 
     // 검색버튼 onClick 함수
     const searchClick = () => {
@@ -36,6 +35,10 @@ const Home = ({
         }
     }
 
+    useEffect(() => {
+        searchInputRef.current.focus(); // 첫 렌더링 시에 focus를 주도록 함.
+    }, [])
+
     return (
         <>
             <div className={styles['search-container']}>
@@ -51,6 +54,7 @@ const Home = ({
                     }}
                     onKeyPress={onEnterPress}
                     spellCheck="false"
+                    ref={searchInputRef}
                 />
                 {/* 검색버튼 */}
                 <button onClick={searchClick} className={styles['app-searchButton']} >
