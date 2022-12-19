@@ -53,7 +53,7 @@ style="text-align : center">
 ### 아이템 정보 탭
 <img src="https://user-images.githubusercontent.com/17917009/208412444-72d51999-12d7-4ba5-8927-e3e8a99885eb.png" style="text-align : center">
 
-**세번째는 '아이템 정보'탭이다. <br>
+**세번째는 '아이템 정보'탭이다.** <br>
 이 탭을 클릭하면 게임아이템의 목록이 나열되어 보여진다. 각 아이템을 클릭하면 해당아이템에 대한 정보도 확인할 수 있다.
 
 ## 개선할 점 또는 추가할만한 기능
