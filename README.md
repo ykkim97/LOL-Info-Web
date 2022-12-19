@@ -27,29 +27,33 @@
 
 일단 초기버전은 필수적으로 필요한 기능만 추가하여 제작하였다. 기본적으로 전적검색을 통한 랭크기록, 매치기록을 확인하고 League of legends에 등장하는 챔피언들의 스킬이나 아이템과 같은 정보들을 확인할 수 있도록 구현하였다.
 ### 전적검색 탭
-<img src="https://user-images.githubusercontent.com/17917009/202985364-98a87c9e-481c-4204-9825-d63168164a4e.png" style="text-align : center">
+<img src="https://user-images.githubusercontent.com/17917009/208411605-1597c00a-c002-4d33-9d00-0f3e6c30cb5d.png" style="text-align : center">
 
 **첫번째는 '전적검색'탭이다.** <br>
 기본적으로 사이트에 접속하면 기본적으로 활성화 되어있다. 검색창에 검색하고자하는 닉네임을 입력하고 검색버튼을 누르면, 일정 시간 후 해당 유저의 닉네임, 레벨, 솔로랭크, 자유랭크기록 , 최근 진행한 10 게임의 기록을 확인할 수 있다.  
 
-<img src="https://user-images.githubusercontent.com/17917009/202987868-89da66d6-67a1-4673-ae20-618707c14246.png" style="text-align : center">
+<img src="https://user-images.githubusercontent.com/17917009/208411810-4f4b8c53-152e-4083-aa37-b3961c0a62f3.png" style="text-align : center">
 검색된 전적기록의 상세기록도 다음과 같이 확인할 수 있다.
 
 ### 챔피언 정보 탭
-<img src="https://user-images.githubusercontent.com/17917009/202985672-d5ed6898-5e82-4c2b-ba32-11f80c981e67.png" style="text-align : center">
+<img src="https://user-images.githubusercontent.com/17917009/208411933-c22c85a7-c4c8-49be-acaa-960bd9d23429.png" style="text-align : center">
 
 **두번째는 '챔피언 정보'탭이다.** <br>
 이 탭을 클릭하면 게임에 등장하는 챔피언의 이미지와 이름이 나열되어있다. 그리고 원하는 챔피언을 클릭하면 챔피언의 기본스탯과 패시브, 스킬, 그리고 추천아이템정보를 확인할 수 있다.
 
-<img src="https://user-images.githubusercontent.com/17917009/202986621-d0e7bb4e-8495-4757-a1cf-86fe0af8b60b.png"
-style="text-align : center">
+<img src="https://user-images.githubusercontent.com/17917009/208412052-95acb1c4-0dea-45b0-9a34-353140a957d0.png" style="text-align : center">
 챔피언이름, 컨셉, 기본스탯을 확인할 수 있다.
 
-<img src="https://user-images.githubusercontent.com/17917009/202987059-49b5338b-bac7-4aa2-84e3-f2e00776c7f0.png"
+<img src="https://user-images.githubusercontent.com/17917009/208412254-a95db589-936e-471d-ae0c-67ef612e19b0.png"
 style="text-align : center">
-<img src="https://user-images.githubusercontent.com/17917009/202987201-4498ed8f-edd0-4eb7-ab49-1bbdc5e7c4b2.png"
+<img src="https://user-images.githubusercontent.com/17917009/208412283-ae393bf7-0391-4e63-9485-4907e4078a82.png"
 style="text-align : center">
 스킬정보와 추천아이템도 확인할 수 있다.
+
+### 아이템 정보 탭
+<img src="https://user-images.githubusercontent.com/17917009/208412444-72d51999-12d7-4ba5-8927-e3e8a99885eb.png" style="text-align : center">
+**세번째는 '아이템 정보'탭이다. <br>
+이 탭을 클릭하면 게임아이템의 목록이 나열되어 보여진다. 각 아이템을 클릭하면 해당아이템에 대한 정보도 확인할 수 있다.
 
 ## 개선할 점 또는 추가할만한 기능
 - 아이템정보를 확인할 수 있는 페이지를 추가할 예정이다.
@@ -76,3 +80,4 @@ style="text-align : center">
 
 ## 변경사항
 - 2022.12.09 아이템정보 탭 및 아이템정보 컴포넌트 생성 
+- 2022.12.19 전체페이지 테마 변경
