@@ -3,13 +3,11 @@ import { useNavigate } from "react-router-dom";
 import styles from "./DownItem.module.css";
 
 const DownItem = ({ findItemObject, itemObject, onErrorImg }) => {
-    console.log(itemObject, "ㅇㅇ")
-
     const navigate = useNavigate();
 
     return (
         <>
-            <h3>하위 아이템</h3>
+            <h3 className={styles['item-desc']}>하위 아이템</h3>
             {findItemObject.from?.map((id, index) => (
                 <div 
                     className={styles['DownItem']}

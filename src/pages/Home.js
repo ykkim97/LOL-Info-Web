@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Home.module.css";
 import { FcSearch } from "react-icons/fc";
-import Match from '../components/contents/Match';
+import Match from '../components/contents/Home/Match';
 
 // 메인페이지 컴포넌트 (홈 컴포넌트)
 const Home = ({ 
@@ -50,6 +50,7 @@ const Home = ({
                         });
                     }}
                     onKeyPress={onEnterPress}
+                    spellCheck="false"
                 />
                 {/* 검색버튼 */}
                 <button onClick={searchClick} className={styles['app-searchButton']} >

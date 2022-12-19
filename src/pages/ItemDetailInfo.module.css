@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    background: linear-gradient(to right, #21232b, #3687e4, #21232b);
 }
 
 .itemDetail-headerInfo {
@@ -24,3 +24,6 @@
     padding: 20px;
 }
 
+.item-desc {
+    color: #ffffff;
+}

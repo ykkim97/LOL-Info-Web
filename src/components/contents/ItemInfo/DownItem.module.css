@@ -5,7 +5,7 @@
     padding-top: 20px;
     text-align: center;
     width: 200px;
-    background-color: #eeeded;
+    background: linear-gradient(to right, #c3c5ce, #bfd6ee, #c3c5ce);
     box-shadow: 0 0 5px 1px rgb(66 152 173);
     cursor: pointer;
 }
@@ -16,4 +16,8 @@
 
 #DownItem-itemName {
     font-size: 16px;
+}
+
+.item-desc {
+    color: #ffffff;
 }

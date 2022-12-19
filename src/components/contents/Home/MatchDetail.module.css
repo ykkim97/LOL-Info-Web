@@ -2,11 +2,11 @@
 .gameData-detail-lose-container {
     margin: auto;
     width: 90%;
-    background: rgb(170, 248, 155);
+    background: linear-gradient(to top, #d4e4fe, #c4d9ee);
 }
 
 .gameData-detail-lose-container {
-    background: rgb(255, 166, 166);
+    background: linear-gradient(to top, rgb(255, 166, 166), rgb(247, 143, 143));
 }
 
 .detail-list {
