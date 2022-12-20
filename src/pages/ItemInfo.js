@@ -44,6 +44,7 @@ const ItemInfo = ({
                             }
                             navigate(`/item/${param}`)
                         }}
+                        key={index}
                     >
                         <img 
                             src={`https://ddragon.leagueoflegends.com/cdn/12.12.1/img/item/${it.image.full}`} 
