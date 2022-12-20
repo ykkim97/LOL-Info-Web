@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./ChampionListComponent.module.css";
 
+// 챔피언 리스트 컴포넌트
 const ChampionListComponent = ({
     onErrorImg,
     championObjectArray,
