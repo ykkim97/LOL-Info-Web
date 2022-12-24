@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Home.module.css";
 import { FcSearch } from "react-icons/fc";
 import Match from '../components/contents/Home/Match';
+import TypeIt from "typeit-react";
 
 // 메인페이지 컴포넌트 (홈 컴포넌트)
 const Home = ({ 
@@ -15,9 +16,8 @@ const Home = ({
     getPlayerLeague,
     onErrorImg,
 }) => {
-    // searchText를 새로 저장하기 위해 nickname을 만듬
-    const [nickname, setNickname] = useState('');
-
+    const searchInputRef = useRef(); // 검색창에 focus를 주기위해 useRef()를 사용하여 searchInputRef에 담기
+    const [nickname, setNickname] = useState(''); // searchText를 새로 저장하기 위해 nickname을 만듬
 
     // 검색버튼 onClick 함수
     const searchClick = () => {
@@ -36,10 +36,21 @@ const Home = ({
         }
     }
 
+    useEffect(() => {
+        searchInputRef.current.focus(); // 첫 렌더링 시에 focus를 주도록 함.
+    }, [])
+
     return (
         <>
             <div className={styles['search-container']}>
-                <h1>LOLY.GG</h1>
+                <TypeIt
+                    options={{
+                        strings: ["LOLY.GG"],
+                        speed : 100,
+                        cursor : false,
+                    }}
+                    className={styles['page-title']}
+                >LOLY.GG</TypeIt>
                 {/* 소환사 검색창 */}
                 <input 
                     type="text" 
@@ -51,6 +62,7 @@ const Home = ({
                     }}
                     onKeyPress={onEnterPress}
                     spellCheck="false"
+                    ref={searchInputRef}
                 />
                 {/* 검색버튼 */}
                 <button onClick={searchClick} className={styles['app-searchButton']} >
@@ -68,6 +80,7 @@ const Home = ({
                     nickname={nickname}
                 />
             </div>
+            
         </>
     )
 }

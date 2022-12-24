@@ -6,6 +6,14 @@
     padding: 20px;
 }
 
+.page-title {
+    display: block;
+    font-size: 40px;
+    font-family: NanumGothic;
+    font-weight: 500;
+    padding: 20px;
+}
+
 .app-searchBox {
     width: 50%;
     height: 30px;
