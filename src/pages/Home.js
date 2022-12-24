@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./Home.module.css";
 import { FcSearch } from "react-icons/fc";
 import Match from '../components/contents/Home/Match';
+import TypeIt from "typeit-react";
 
 // 메인페이지 컴포넌트 (홈 컴포넌트)
 const Home = ({ 
@@ -42,7 +43,14 @@ const Home = ({
     return (
         <>
             <div className={styles['search-container']}>
-                <h1>LOLY.GG</h1>
+                <TypeIt
+                    options={{
+                        strings: ["LOLY.GG"],
+                        speed : 100,
+                        cursor : false,
+                    }}
+                    className={styles['page-title']}
+                >LOLY.GG</TypeIt>
                 {/* 소환사 검색창 */}
                 <input 
                     type="text" 
@@ -72,6 +80,7 @@ const Home = ({
                     nickname={nickname}
                 />
             </div>
+            
         </>
     )
 }
