@@ -7,10 +7,12 @@ import ParticipantsData from "./ParticipantsData";
 import PlayedChampion from "./PlayedChampion";
 import PersonalKda from "./PersonalKda";
 import KillRate from "./KillRate";
+import Proficiency from "./Proficiency";
 
 // 매치기록 컴포넌트
 const Match = ({ 
     playerInformation, 
+    proficiency,
     gameList, 
     leagueList, 
     onErrorImg,
@@ -61,6 +63,8 @@ const Match = ({
                             playerInformation={playerInformation}
                             leagueList={leagueList} 
                         />
+                        {/* 숙련도 TOP 3 */}
+                        <Proficiency proficiency={proficiency} onErrorImg={onErrorImg}/>
                         {
                             gameList.map((gameData, index) => (
                                 <div key={index}>

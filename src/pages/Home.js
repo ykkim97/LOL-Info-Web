@@ -9,11 +9,13 @@ const Home = ({
     searchText, 
     setSearchText,
     playerInformation, 
+    proficiency,
     gameList, 
     leagueList,
     getPlayerInformation,
     getPlayerGames,
     getPlayerLeague,
+    getProficiency,
     onErrorImg,
 }) => {
     const searchInputRef = useRef(); // 검색창에 focus를 주기위해 useRef()를 사용하여 searchInputRef에 담기
@@ -24,6 +26,7 @@ const Home = ({
         getPlayerInformation();
         getPlayerGames();
         getPlayerLeague();
+        getProficiency();
         // 검색할 닉네임을 타이핑하고 클릭을 누를 경우 최종 검색할 닉네임을 nickname에 저장하도록 한다.
         // 이후 nickname값을 Match 컴포넌트에 props로 전달한다.
         setNickname(searchText); 
@@ -74,6 +77,7 @@ const Home = ({
             <div className={styles['match-record']}>
                 <Match 
                     playerInformation={playerInformation} 
+                    proficiency={proficiency}
                     gameList={gameList} 
                     leagueList={leagueList} 
                     onErrorImg={onErrorImg}
