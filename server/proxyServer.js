@@ -49,6 +49,7 @@ const getPlayerID = (playerName) => {
         .catch(error => console.log(error));
 }
 
+// 로테이션챔피언정보를 가져오는 함수
 const getRotationChampion = () => {
     return axios.get(`https://kr.api.riotgames.com/lol/platform/v3/champion-rotations?api_key=${API_KEY}`)
         .then(response => {
@@ -72,6 +73,19 @@ app.get('/playerInformation', async (req, res) => {
     // information (소환사 정보 얻어오기)
     const information = await getPlayerInformation(playerName);
     res.json(information); 
+})
+
+// GET proficiency (소환사의 챔피언 숙련도 정보 가져오기)
+// localhost:4000/proficiency
+app.get('/proficiency', async (req, res) => {
+    const playerName = req.query.searchText;
+    // id
+    const id = await getPlayerID(playerName);
+    const API_CALL = `https://kr.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/${id}?api_key=${API_KEY}`;
+    const proficiency = await axios.get(API_CALL)
+        .then(response => response.data)
+        .catch(error => console.log(error));
+    res.json(proficiency);
 })
 
 // GET past10Games (과거 10게임 가져오기)
@@ -122,6 +136,8 @@ app.get('/tier', async (req, res) => {
     res.json(leagueDataArray)
 })
 
+// GET rotation (로테이션 챔피언정보 가져오기)
+// localhost:4000/rotation
 app.get('/rotation', async (req, res) => {
     const rotation = await getRotationChampion();
     res.json(rotation);

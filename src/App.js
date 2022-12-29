@@ -17,6 +17,7 @@ function App() {
   const [gameList, setGameList] = useState([]); // 매치정보가 들어갈 Array
   const [leagueList, setLeagueList] = useState([]); // 소환사 리그정보(티어정보)가 들어갈 Array
   const [item, setItem] = useState([]); // 아이템 정보
+  const [proficiency, setProficiency] = useState([]); // 숙련도 정보
 
     // 아이템 정보를 가져오는 함수
     const getItemInfomation = () => {
@@ -32,6 +33,15 @@ function App() {
         axios.get('http://localhost:4000/playerInformation', {params : {searchText : searchText}})
         .then((response) => {
             setPlayerInformation(response.data);
+        })
+        .catch((error) => console.log(error));
+    }
+
+    // 소환사의 숙련도 정보를 가져오는 함수
+    const getProficiency = () => {
+        axios.get('http://localhost:4000/proficiency', {params : {searchText : searchText}})
+        .then((response) => {
+            setProficiency(response.data);
         })
         .catch((error) => console.log(error));
     }
@@ -75,12 +85,14 @@ function App() {
                             setSearchText={setSearchText}
                             item={item}
                             playerInformation={playerInformation}
+                            proficiency={proficiency}
                             gameList={gameList}
                             leagueList={leagueList}
                             getPlayerInformation={getPlayerInformation}
                             getPlayerGames={getPlayerGames}
                             getPlayerLeague={getPlayerLeague}
                             getItemInfomation={getItemInfomation}
+                            getProficiency={getProficiency}
                             onErrorImg={onErrorImg}
                         />
                     }
