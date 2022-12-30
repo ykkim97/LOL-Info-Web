@@ -27,7 +27,7 @@
 
 일단 초기버전은 필수적으로 필요한 기능만 추가하여 제작하였다. 기본적으로 전적검색을 통한 랭크기록, 매치기록을 확인하고 League of legends에 등장하는 챔피언들의 스킬이나 아이템과 같은 정보들을 확인할 수 있도록 구현하였다.
 ### 전적검색 탭
-<img src="https://user-images.githubusercontent.com/17917009/208411605-1597c00a-c002-4d33-9d00-0f3e6c30cb5d.png" style="text-align : center">
+<img src="https://user-images.githubusercontent.com/17917009/210034554-b91798e9-abda-4bf0-889a-494b03c42fdb.png" style="text-align : center">
 
 **첫번째는 '전적검색'탭이다.** <br>
 기본적으로 사이트에 접속하면 기본적으로 활성화 되어있다. 검색창에 검색하고자하는 닉네임을 입력하고 검색버튼을 누르면, 일정 시간 후 해당 유저의 닉네임, 레벨, 솔로랭크, 자유랭크기록 , 최근 진행한 10 게임의 기록을 확인할 수 있다.  
