@@ -1,11 +1,13 @@
-// 프록시서버
+'use strict';
 
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
-const { response } = require('express');
 const app = express();
 require('dotenv').config({ path : '../.env' });
+
+// Port Number
+const PORT = 4000;
 
 app.use(cors());
 
@@ -143,8 +145,8 @@ app.get('/rotation', async (req, res) => {
     res.json(rotation);
 })
 
-// port 4000
-app.listen(4000, () => {
+
+app.listen(PORT, () => {
     console.log("Server started on port 4000 - 4000포트에서 서버 구동중");
 });
 
