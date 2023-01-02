@@ -23,7 +23,7 @@ const Proficiency = ({
                             }
                         })
                         return (
-                            <article className={styles['proficiency-championData']}>
+                            <article className={styles['proficiency-championData']} key={findChampion[index]}>
                                 <h2 className={styles['proficiency-rank']}>TOP {index + 1}</h2>
                                 <div className={styles['proficiency-infoContainer']}>
                                     <img 
