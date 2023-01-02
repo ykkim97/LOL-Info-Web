@@ -10,7 +10,6 @@
 - 현재 개발 진행중에 있습니다.
 - 현재는 riotgames에서 제공하는 DEVELOPMENT KEY를 사용하여 개발하고 있는데 이 KEY는 1일 단위로 만료가 된다. 매일 KEY값을 갱신해주고 개발해야한다는 불편함이 있다.
 - riotgames에서 production key를 발급받으면 문제가 해결되지만 승인되는데 시간이 꽤 걸린다고한다.
-- 현재 이 웹페이지는 배포되지 않음.
 
 ## 프로젝트 개요 및 동기
 개인적으로 'League Of Legends'라는 게임을 매우 즐겨하는 편이고 이 게임은 사실 정말 대중적이고 유저수가 많은 인기 게임이다. 이 게임의 공식사이트에서도 API를 제공하고 있었는데 새로운 웹사이트를 만들고 싶었던 나에게 큰 흥미를 이끌었다. 실제로 'OP.GG'나 'fow.kr' 등의 전적검색사이트가 꽤 많다. 하지만 나만의 전적검색사이트를 만들어보고 싶었고 같이 작업했던 친구도 역시 같은 생각이었다. 그래서 이 사이트를 제작하게 되었다.
@@ -64,6 +63,8 @@ style="text-align : center">
 
 ## 프로젝트 실행방법
 
+**develop environment**
+
 **1. https://developer.riotgames.com/ 에서 DEVELOPMENT API KEY 발급**
 
 **2. 최상위 경로의 .env에 TEST_KEY=발급받은KEY값 넣기**
@@ -76,6 +77,8 @@ style="text-align : center">
 
 **6. 새 Terminal을 열고 npm install 후 React 실행(npm start)**<br>
 
+## 사이트
+https://lolygg.netlify.app/
 
 ## 변경사항
 - 2022.12.09 아이템정보 탭 및 아이템정보 컴포넌트 생성 
