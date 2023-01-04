@@ -7,7 +7,7 @@
 2 명
 
 ## 프로젝트 진행 상황
-- 현재 개발 진행중에 있습니다.
+- 현재 추가적인 기능을 구현하고 있다.
 - 현재는 riotgames에서 제공하는 DEVELOPMENT KEY를 사용하여 개발하고 있는데 이 KEY는 1일 단위로 만료가 된다. 매일 KEY값을 갱신해주고 개발해야한다는 불편함이 있다.
 - riotgames에서 production key를 발급받으면 문제가 해결되지만 승인되는데 시간이 꽤 걸린다고한다.
 
@@ -22,9 +22,8 @@
 - Express
 
 ## 구현 기능
-**아직 개발이 진행중이고 초기버전이다. 새로운 기능이 추가되면 ReadME도 업데이트될 것이다.** <br>
 
-일단 초기버전은 필수적으로 필요한 기능만 추가하여 제작하였다. 기본적으로 전적검색을 통한 랭크기록, 매치기록을 확인하고 League of legends에 등장하는 챔피언들의 스킬이나 아이템과 같은 정보들을 확인할 수 있도록 구현하였다.
+기본적으로 전적검색을 통한 랭크기록, 매치기록을 확인하고 League of legends에 등장하는 챔피언들의 스킬이나 아이템과 같은 정보들을 확인할 수 있도록 구현하였다.
 ### 전적검색 탭
 <img src="https://user-images.githubusercontent.com/17917009/210034554-b91798e9-abda-4bf0-889a-494b03c42fdb.png" style="text-align : center">
 
@@ -77,7 +76,7 @@ style="text-align : center">
 
 **6. 새 Terminal을 열고 npm install 후 React 실행(npm start)**<br>
 
-## 사이트
+## 배포 사이트
 https://lolygg.netlify.app/
 
 ## 변경사항
