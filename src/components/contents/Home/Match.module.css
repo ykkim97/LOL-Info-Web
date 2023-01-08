@@ -3,6 +3,20 @@
     margin: 0 0;
 }
 
+.activeGames-button {
+    width: 150px;
+    height: 50px;
+    font-family: nanumGothic;
+    font-size: 18px;
+    display: block;
+    margin: 15px auto;
+    border: 1px solid green;
+    border-radius: 5px;
+    background: green;
+    color: white;
+    cursor: pointer;
+}
+
 .gameData-win-container,
 .gameData-lose-container {
     margin: auto;
