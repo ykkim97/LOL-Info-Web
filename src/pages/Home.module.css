@@ -31,6 +31,9 @@
     cursor: pointer;
     border-radius: 5px;
     padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: nanumgothic;
 }
 
 .app-searchButton-icons {

@@ -71,8 +71,8 @@ const Home = ({
                     ref={searchInputRef}
                 />
                 {/* 검색버튼 */}
-                <button onClick={searchClick} className={styles['app-searchButton']} >
-                    <FcSearch className={styles['app-searchButton-icons']}/>
+                <button type="submit" name="submit" onClick={searchClick} className={styles['app-searchButton']} >
+                    <FcSearch className={styles['app-searchButton-icons']}/>검색
                 </button>
             </div>
             
