@@ -4,3 +4,31 @@
     margin: auto;
     padding: 20px;
 }
+
+#gameMode {
+    text-align: center;
+}
+
+.banned-Container {
+    text-align: center;
+}
+
+.banned-Champions {
+    width: 30px;
+    height: 30px;
+}
+
+.participant-Container {
+    display: flex;
+    padding: 2px;
+    align-items: center;
+}
+
+.playing-Champions {
+    width: 30px;
+    height: 30px;
+}
+
+.participant-name {
+    margin-left: 10px;
+}
