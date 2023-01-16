@@ -1,0 +1,14 @@
+.participant-Container {
+    display: flex;
+    padding: 2px;
+    align-items: center;
+}
+
+.playing-Champions {
+    width: 30px;
+    height: 30px;
+}
+
+.participant-name {
+    margin-left: 10px;
+}
