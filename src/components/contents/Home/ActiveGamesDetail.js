@@ -8,28 +8,31 @@ const ActiveGamesDetail = ({
     onErrorImg,
 }) => {
     const championDataArray = Object.values(ChampionData[0].data); // 모든챔피언데이터 Object를 Array로 변환
-    const playingSummonerName = []; // 플레이중인 소환사 아이디를 담을 Array
+    const playingSummonerId = []; // 플레이중인 소환사의 ID를 담을 Array
     const playingChampionArray = []; // 플레이중인 챔피언을 담을 Array
-    const [activePlayersTier, setActivePlayersTier] = useState([]); // 현재 게임 정보
+    const [activePlayersTier, setActivePlayersTier] = useState(); // 현재 게임 정보
     
-    activeGames.participants?.map((participant, index) => {
-        playingSummonerName?.push(participant.summonerName);
+    activeGames.participants?.forEach((participant, index) => {
+        playingSummonerId?.push(participant.summonerId);
     })
     
     // 인게임 플레이어들의 티어를 가져오는 함수
     const getActivePlayersLeague = () => {
-        axios.get('http://localhost:4000/activePlayersTier', {params : {playingSummonerName : playingSummonerName}})
+        axios.get('http://localhost:4000/activePlayersTier', {params : {playingSummonerId : playingSummonerId}})
         .then((response) => {
-            setActivePlayersTier(response.data);
+            return response.data;
+        })
+        .then(result => {
+            setActivePlayersTier(result);
         })
         .catch((error) => console.log(error));
     }
 
     useEffect(() => {
         getActivePlayersLeague()
-        console.log(playingSummonerName, "playingSummonerName")
+        // console.log(playingSummonerName, "playingSummonerName")
         console.log(activePlayersTier, "activePlayersTier")
-        console.log(activeGames, "activeGames")
+        // console.log(activeGames, "activeGames")
     }, [])
 
     return (
@@ -50,7 +53,6 @@ const ActiveGamesDetail = ({
                             className={styles['playing-Champions']}
                         />
                         <div className={styles[`participant-name`]}>{participant.summonerName}</div>
-                        {/* TODO: 참가자 랭크정보를 얻을 수 있는 방법 찾기 */}
                     </div>
                 )
             })}
