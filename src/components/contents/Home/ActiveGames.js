@@ -7,10 +7,6 @@ const ActiveGames = ({
     activeGames,
     onErrorImg,
 }) => {
-    
-    useEffect(() => {
-        console.log(activeGames, "activeGames")
-    }, [])
 
     const championDataArray = Object.values(ChampionData[0].data); // 모든챔피언데이터 Object를 Array로 변환
     const bannedChampionArray = []; // 밴된 챔피언 이미지경로값을 담을 Array
@@ -26,6 +22,7 @@ const ActiveGames = ({
                     </h3>
                     {/* 밴픽 */}
                     <div className={styles['banned-Container']}>
+                        <h3>밴픽</h3>
                         {activeGames.bannedChampions?.map((champion, index) => {
                             championDataArray.forEach((obj) => {
                                 if (obj.key == champion.championId) {
@@ -37,6 +34,7 @@ const ActiveGames = ({
                                     src={`https://ddragon.leagueoflegends.com/cdn/12.21.1/img/champion/${bannedChampionArray[index]}`}
                                     onError={onErrorImg}
                                     className={styles['banned-Champions']}
+                                    key={index}
                                 />
                             )
                         })}
