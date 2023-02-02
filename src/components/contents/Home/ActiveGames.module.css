@@ -1,6 +1,6 @@
 .activeGames-Container {
     width: 87%;
-    background-color: white;
+    background: linear-gradient(to right, #c3c5ce, #b4d1f3, #c3c5ce);
     margin: auto;
     padding: 20px;
 }
@@ -11,24 +11,11 @@
 
 .banned-Container {
     text-align: center;
+    border: 1px solid black;
+    background: rgb(236, 65, 34);
 }
 
 .banned-Champions {
-    width: 30px;
-    height: 30px;
-}
-
-.participant-Container {
-    display: flex;
-    padding: 2px;
-    align-items: center;
-}
-
-.playing-Champions {
-    width: 30px;
-    height: 30px;
-}
-
-.participant-name {
-    margin-left: 10px;
+    width: 35px;
+    height: 35px;
 }

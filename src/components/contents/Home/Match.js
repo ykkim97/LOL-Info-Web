@@ -71,7 +71,9 @@ const Match = ({
 
                         {/* 현재 게임 정보 */}
                         <button 
-                            onClick={() => { setIsClickedActiveGames(prev => !prev) }}
+                            onClick={() => { 
+                                setIsClickedActiveGames(prev => !prev)
+                            }}
                             className={styles['activeGames-button']}
                             title="현재 인게임 정보를 확인하세요!"
                         >인게임 정보</button>
