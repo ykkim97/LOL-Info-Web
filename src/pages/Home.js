@@ -33,11 +33,6 @@ const Home = ({
         // 검색할 닉네임을 타이핑하고 클릭을 누를 경우 최종 검색할 닉네임을 nickname에 저장하도록 한다.
         // 이후 nickname값을 Match 컴포넌트에 props로 전달한다.
         setNickname(searchText); 
-
-        // 현재 게임 정보 콘솔에 출력해보는 부분
-
-        // activeGames 출력
-        console.log(activeGames, "activeGames")
     }
 
     // Enter키로도 검색할 수 있도록 하기위한 함수
@@ -76,8 +71,8 @@ const Home = ({
                     ref={searchInputRef}
                 />
                 {/* 검색버튼 */}
-                <button onClick={searchClick} className={styles['app-searchButton']} >
-                    <FcSearch className={styles['app-searchButton-icons']}/>
+                <button type="submit" name="submit" onClick={searchClick} className={styles['app-searchButton']} >
+                    <FcSearch className={styles['app-searchButton-icons']}/>검색
                 </button>
             </div>
             
@@ -90,6 +85,7 @@ const Home = ({
                     leagueList={leagueList} 
                     onErrorImg={onErrorImg}
                     nickname={nickname}
+                    activeGames={activeGames}
                 />
             </div>
         </>

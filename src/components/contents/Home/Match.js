@@ -8,6 +8,7 @@ import PlayedChampion from "./PlayedChampion";
 import PersonalKda from "./PersonalKda";
 import KillRate from "./KillRate";
 import Proficiency from "./Proficiency";
+import ActiveGames from "./ActiveGames";
 
 // 매치기록 컴포넌트
 const Match = ({ 
@@ -17,6 +18,7 @@ const Match = ({
     leagueList, 
     onErrorImg,
     nickname,
+    activeGames,
 }) => {
     const summonerTeamIdsOfGamelist = []; // 소환사가 속한 팀의 teamId들을 저장할 summonerTeamIdsOfGamelist 배열 생성
     const killsOfGamelist = []; // 소환사가 속한 팀의 전체 킬 수들을 저장할 killsOfGamelist 배열 생성
@@ -25,6 +27,7 @@ const Match = ({
 
     const [visible, setVisible] = useState([...visibleArr]); // 매치상세기록이 열려있는지 판단하기위한 state
     const [open, setOpen] = useState(false); // 상세기록컴포넌트를 열고 닫을 때 사용할 state
+    const [isClickedActiveGames, setIsClickedActiveGames] = useState(false);
 
     gameList.map((gameData, index) => {
         visibleArr.push(false)
@@ -65,6 +68,22 @@ const Match = ({
                         />
                         {/* 숙련도 TOP 3 */}
                         <Proficiency proficiency={proficiency} onErrorImg={onErrorImg}/>
+
+                        {/* 현재 게임 정보 */}
+                        <button 
+                            onClick={() => { 
+                                setIsClickedActiveGames(prev => !prev)
+                            }}
+                            className={styles['activeGames-button']}
+                            title="현재 인게임 정보를 확인하세요!"
+                        >인게임 정보</button>
+                        {isClickedActiveGames && 
+                            <ActiveGames 
+                                activeGames={activeGames} 
+                                onErrorImg={onErrorImg} 
+                            />
+                        }
+
                         {
                             gameList.map((gameData, index) => (
                                 <div key={index}>
