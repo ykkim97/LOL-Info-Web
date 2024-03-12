@@ -14,7 +14,7 @@ const Proficiency = ({
         <>
             <h3 className={styles['proficiency-title']}>챔피언 숙련도 TOP 3</h3>
             <section className={styles['proficiency-Container']}>
-                {proficiency?.map(((champion, index) => {
+                {proficiency && proficiency?.map(((champion, index) => {
                     if (index < 3) {
                         championDataArray.forEach(obj => {
                             if (champion.championId == obj.key) {
